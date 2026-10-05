@@ -1,0 +1,5 @@
+streamlit>=1.50,<2
+gensim>=4.4,<5
+numpy>=2.0,<3
+requests>=2.31,<3
+zeyrek==0.1.3
