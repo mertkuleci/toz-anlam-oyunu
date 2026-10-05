@@ -1,0 +1,105 @@
+name: Build daily database
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/daily-database.yml
+      - download_model.py
+      - generate_daily_db.py
+      - generate_year_json.py
+      - requirements.txt
+      - data/year_game_data.json
+  schedule:
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+    inputs:
+      target_date:
+        description: "Optional target date (YYYY-MM-DD)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-database
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Select target date
+        id: date
+        env:
+          REQUESTED_DATE: ${{ inputs.target_date }}
+        run: |
+          if [ -n "$REQUESTED_DATE" ]; then
+            if ! [[ "$REQUESTED_DATE" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]]; then
+              echo "target_date must use YYYY-MM-DD format" >&2
+              exit 1
+            fi
+            target_date="$REQUESTED_DATE"
+          elif [ "$GITHUB_EVENT_NAME" = "schedule" ]; then
+            target_date=$(TZ=Europe/Istanbul date -d tomorrow +%F)
+          else
+            target_date=$(TZ=Europe/Istanbul date +%F)
+          fi
+          echo "target_date=$target_date" >> "$GITHUB_OUTPUT"
+          echo "Preparing daily database for $target_date"
+
+      - name: Install Python dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Download Turkish vector model
+        run: python download_model.py
+
+      - name: Build daily SQLite database
+        env:
+          TARGET_DATE: ${{ steps.date.outputs.target_date }}
+        run: python generate_daily_db.py --date "$TARGET_DATE"
+
+      - name: Compress database
+        env:
+          TARGET_DATE: ${{ steps.date.outputs.target_date }}
+        run: gzip -c data/game_data.db > "data/game_data_${TARGET_DATE}.db.gz"
+
+      - name: Publish database release asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TARGET_DATE: ${{ steps.date.outputs.target_date }}
+        run: |
+          if ! gh release view daily-databases --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            gh release create daily-databases \
+              --repo "$GITHUB_REPOSITORY" \
+              --title "T.Ö.Z. daily databases" \
+              --notes "Automated daily SQLite database cache." \
+              --prerelease
+          fi
+
+          gh release upload daily-databases \
+            "data/game_data_${TARGET_DATE}.db.gz" \
+            --repo "$GITHUB_REPOSITORY" \
+            --clobber
+
+          cutoff=$(date -d "$TARGET_DATE -6 days" +%F)
+          assets=$(gh release view daily-databases --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets[].name')
+          while IFS= read -r asset; do
+            if [[ "$asset" =~ ^game_data_([0-9]{4}-[0-9]{2}-[0-9]{2})\.db\.gz$ ]]; then
+              asset_date="${BASH_REMATCH[1]}"
+              if [[ "$asset_date" < "$cutoff" ]]; then
+                gh release delete-asset daily-databases "$asset" --repo "$GITHUB_REPOSITORY" --yes
+              fi
+            fi
+          done <<< "$assets"

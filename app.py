@@ -3,16 +3,20 @@ import os
 import hashlib
 import hmac
 import html
+import gzip
 import re
 import secrets
 import sqlite3
 import smtplib
 import ssl
+import shutil
+import tempfile
 import threading
 import time
 import unicodedata
 from datetime import datetime, timedelta, timezone
 from email.message import EmailMessage
+import requests
 import streamlit as st
 
 st.set_page_config(
@@ -27,7 +31,6 @@ DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 USERS_FILE = os.path.join(DATA_DIR, "users.json")
 DB_FILE = os.path.join(DATA_DIR, "game_data.db")
 YEARLY_JSON_FILE = os.path.join(DATA_DIR, "year_game_data.json")
-MODEL_FILE = os.path.join(DATA_DIR, "wiki.tr.vec")
 TR_TIMEZONE = timezone(timedelta(hours=3))
 PBKDF2_ITERATIONS = 310000
 DAILY_BUILD_LOCK = threading.Lock()
@@ -367,47 +370,89 @@ def scheduled_game_date():
     return None
 
 
+def database_file_matches(database_path, game_date, expected_keys):
+    if not os.path.exists(database_path):
+        return False
+    conn = sqlite3.connect(database_path)
+    try:
+        row = conn.execute(
+            "SELECT value FROM app_metadata WHERE key = 'daily_game_date'"
+        ).fetchone()
+        game_keys = {
+            item[0] for item in conn.execute("SELECT game_key FROM games").fetchall()
+        }
+        clean_rank_counts = dict(conn.execute(
+            "SELECT game_key, COUNT(*) FROM clean_word_ranks GROUP BY game_key"
+        ).fetchall())
+        return (
+            row is not None and row[0] == game_date and game_keys == expected_keys
+            and all(clean_rank_counts.get(key, 0) >= 150 for key in expected_keys)
+        )
+    except sqlite3.Error:
+        return False
+    finally:
+        conn.close()
+
+
+def download_prebuilt_database(game_date, expected_keys):
+    asset_name = f"game_data_{game_date}.db.gz"
+    asset_url = (
+        "https://github.com/mertkuleci/toz-anlam-oyunu/releases/download/"
+        f"daily-databases/{asset_name}"
+    )
+    os.makedirs(DATA_DIR, exist_ok=True)
+    archive_fd, archive_path = tempfile.mkstemp(suffix=".db.gz", dir=DATA_DIR)
+    os.close(archive_fd)
+    database_fd, database_temp_path = tempfile.mkstemp(suffix=".db", dir=DATA_DIR)
+    os.close(database_fd)
+
+    try:
+        with requests.get(
+            asset_url,
+            headers={"User-Agent": "TOZ-daily-database/1.0"},
+            stream=True,
+            timeout=(10, 120)
+        ) as response:
+            if response.status_code == 404:
+                return False, ""
+            response.raise_for_status()
+            with open(archive_path, "wb") as archive_file:
+                for chunk in response.iter_content(chunk_size=1024 * 1024):
+                    if chunk:
+                        archive_file.write(chunk)
+
+        with gzip.open(archive_path, "rb") as archive_file, open(database_temp_path, "wb") as database_file:
+            shutil.copyfileobj(archive_file, database_file, length=4 * 1024 * 1024)
+
+        if not database_file_matches(database_temp_path, game_date, expected_keys):
+            return False, "İndirilen günlük veritabanı doğrulamadan geçemedi."
+
+        os.replace(database_temp_path, DB_FILE)
+        return True, ""
+    except (requests.RequestException, OSError, EOFError) as error:
+        return False, f"Önceden hazırlanmış günlük veritabanı indirilemedi: {error}"
+    finally:
+        for temporary_path in (archive_path, database_temp_path):
+            if os.path.exists(temporary_path):
+                os.remove(temporary_path)
+
+
 def ensure_daily_database(game_date):
     with DAILY_BUILD_LOCK:
         with open(YEARLY_JSON_FILE, "r", encoding="utf-8") as file:
             expected_keys = set(json.load(file)[game_date])
-        if os.path.exists(DB_FILE):
-            conn = sqlite3.connect(DB_FILE)
-            try:
-                row = conn.execute(
-                    "SELECT value FROM app_metadata WHERE key = 'daily_game_date'"
-                ).fetchone()
-                existing_keys = {
-                    item[0] for item in conn.execute("SELECT game_key FROM games").fetchall()
-                }
-                has_clean_ranks = conn.execute(
-                    "SELECT 1 FROM sqlite_master WHERE type = 'table' AND name = 'clean_word_ranks'"
-                ).fetchone() is not None
-                clean_rank_counts = {}
-                if has_clean_ranks:
-                    clean_rank_counts = dict(conn.execute(
-                        "SELECT game_key, COUNT(*) FROM clean_word_ranks GROUP BY game_key"
-                    ).fetchall())
-                if (
-                    row and row[0] == game_date and existing_keys == expected_keys
-                    and has_clean_ranks
-                    and all(clean_rank_counts.get(key, 0) >= 150 for key in expected_keys)
-                ):
-                    conn.close()
-                    return True, ""
-            except sqlite3.Error:
-                pass
-            conn.close()
+        if database_file_matches(DB_FILE, game_date, expected_keys):
+            return True, ""
 
-        try:
-            if not os.path.exists(MODEL_FILE):
-                from download_model import download_model
-                download_model()
-            from generate_daily_db import build_daily_database
-            build_daily_database(game_date)
-        except Exception as error:
-            return False, str(error)
-        return True, ""
+        downloaded, download_error = download_prebuilt_database(game_date, expected_keys)
+        if downloaded:
+            return True, ""
+        if download_error:
+            return False, download_error
+        return False, (
+            f"{game_date} için günlük veritabanı henüz üretilmedi. "
+            "GitHub Actions'ta 'Build daily database' işinin tamamlanmasını bekleyin."
+        )
 
 # ==========================================
 # T.Ö.Z. VISUAL SYSTEM

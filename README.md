@@ -8,9 +8,9 @@ Windows'ta proje sanal ortami ile:
 venv\Scripts\python.exe -m streamlit run app.py
 ```
 
-Gunun oyunu `data/year_game_data.json` takviminden secilir. Tarih Turkiye saatiyle hesaplanir; gun degistiginde uygulama, yeni hedeflerin SQLite siralamalarini ilk istekte otomatik olusturur.
+Gunun oyunu `data/year_game_data.json` takviminden secilir. Tarih Turkiye saatiyle hesaplanir. `.github/workflows/daily-database.yml` her gun yeni hedeflerin SQLite siralamalarini onceden olusturup tarihli, sikistirilmis bir GitHub Release asset'i olarak yayinlar. Uygulama acilista sadece ilgili hazir DB'yi indirir; vektor modelini veya agir benzerlik hesaplamalarini web istegi sirasinda yapmaz.
 
-Model dosyasi Git'e eklenmez. Canli ortamda dosya yoksa ilk acilista otomatik olarak yaklasik 1.1 GB'lik `wiki.tr.vec` indirilir; ardindan gunluk SQLite veritabani olusturulur. Ilk acilis baglanti hizina ve sunucu kaynaklarina gore uzun surebilir. Modelin ve DB'nin canli ortamda kalici saklanacagi garanti degildir; uygulama yeniden baslatildiginda model/DB tekrar indirilebilir veya uretilebilir.
+Model dosyasi Git'e eklenmez. Vektor modeli yalnizca GitHub Actions tarafinda indirilip gunluk DB uretiminde kullanilir. Yeni repo kurulumunda `Build daily database` workflow'u ilk deploy'dan once bir kez calistirilmalidir; gunluk workflow Istanbul saatiyle 21:00'de ertesi gunun DB'sini hazirlar. DB bulunamazsa workflow'u `Actions` sekmesinden elle calistirip `target_date` girebilirsin.
 
 ## E-posta dogrulamasi
 
