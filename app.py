@@ -23,10 +23,11 @@ st.set_page_config(
 )
 
 MAX_ATTEMPTS = 20
-USERS_FILE = "data/users.json"
-DB_FILE = "data/game_data.db"
-YEARLY_JSON_FILE = "data/year_game_data.json"
-MODEL_FILE = "data/wiki.tr.vec"
+DATA_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+USERS_FILE = os.path.join(DATA_DIR, "users.json")
+DB_FILE = os.path.join(DATA_DIR, "game_data.db")
+YEARLY_JSON_FILE = os.path.join(DATA_DIR, "year_game_data.json")
+MODEL_FILE = os.path.join(DATA_DIR, "wiki.tr.vec")
 TR_TIMEZONE = timezone(timedelta(hours=3))
 PBKDF2_ITERATIONS = 310000
 DAILY_BUILD_LOCK = threading.Lock()
@@ -306,7 +307,7 @@ def get_leaderboard(mode):
 
 
 def initialize_daily_play_storage():
-    os.makedirs("data", exist_ok=True)
+    os.makedirs(DATA_DIR, exist_ok=True)
     conn = sqlite3.connect(DB_FILE)
     conn.execute("""
     CREATE TABLE IF NOT EXISTS daily_plays (

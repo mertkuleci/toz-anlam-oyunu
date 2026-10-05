@@ -5,14 +5,16 @@ import json
 import sqlite3
 import unicodedata
 from datetime import datetime, timedelta, timezone
+from pathlib import Path
 import requests
 from gensim.models import KeyedVectors
 from zeyrek import MorphAnalyzer
 
-DB_PATH = "data/game_data.db"
-MODEL_PATH = "data/wiki.tr.vec"
-YEARLY_JSON_PATH = "data/year_game_data.json"
-CLEAN_ROOTS_PATH = "data/clean_roots.txt"
+DATA_DIR = Path(__file__).resolve().parent / "data"
+DB_PATH = DATA_DIR / "game_data.db"
+MODEL_PATH = DATA_DIR / "wiki.tr.vec"
+YEARLY_JSON_PATH = DATA_DIR / "year_game_data.json"
+CLEAN_ROOTS_PATH = DATA_DIR / "clean_roots.txt"
 TR_TIMEZONE = timezone(timedelta(hours=3))
 MAX_HINT_VOCABULARY = 60000
 
@@ -133,7 +135,7 @@ def init_db(conn):
     conn.commit()
 
 def build_daily_database(target_date=None):
-    os.makedirs("data", exist_ok=True)
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     # 1. 365 Günlük JSON dosyasından bugünün kelimelerini al
     if not os.path.exists(YEARLY_JSON_PATH):

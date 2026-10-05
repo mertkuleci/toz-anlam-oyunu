@@ -1,16 +1,18 @@
 import urllib.request
 import os
+from pathlib import Path
 
 MODEL_URL = "https://dl.fbaipublicfiles.com/fasttext/vectors-wiki/wiki.tr.vec"
-OUTPUT_PATH = "data/wiki.tr.vec"
-TEMP_PATH = f"{OUTPUT_PATH}.download"
+DATA_DIR = Path(__file__).resolve().parent / "data"
+OUTPUT_PATH = DATA_DIR / "wiki.tr.vec"
+TEMP_PATH = DATA_DIR / "wiki.tr.vec.download"
 
 
 def download_model():
     if os.path.exists(OUTPUT_PATH) and os.path.getsize(OUTPUT_PATH) > 0:
         return OUTPUT_PATH
 
-    os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
     request = urllib.request.Request(MODEL_URL, headers={"User-Agent": "Mozilla/5.0"})
     print("Türkçe vektör modeli indiriliyor (~1.1 GB)...")
     try:
@@ -26,7 +28,7 @@ def download_model():
         raise RuntimeError(f"Türkçe vektör modeli indirilemedi: {error}") from error
 
     print("Vektör modeli indirildi.")
-    return OUTPUT_PATH
+    return str(OUTPUT_PATH)
 
 
 if __name__ == "__main__":

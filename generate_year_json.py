@@ -1,5 +1,8 @@
 import json
 from datetime import datetime, timedelta
+from pathlib import Path
+
+DATA_DIR = Path(__file__).resolve().parent / "data"
 
 # 365 Günlük Manuel ve Temiz Türkçe Kelime Veritabanı
 YEARLY_WORDS = [
@@ -464,7 +467,7 @@ def generate_full_year_database():
             "mode_3_word_kelime_3": clean_words[3]
         }
 
-    with open("data/year_game_data.json", "w", encoding="utf-8") as f:
+    with open(DATA_DIR / "year_game_data.json", "w", encoding="utf-8") as f:
         json.dump(dataset, f, ensure_ascii=False, indent=4)
     last_date = next(reversed(dataset))
     print(f"✅ {len(dataset)} günlük kelime veritabanı {START_DATE:%Y-%m-%d} - {last_date} aralığına yazıldı.")
