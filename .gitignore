@@ -1,7 +1,9 @@
 venv/
+.venv/
 __pycache__/
 *.py[cod]
 .streamlit/secrets.toml
+data/wiki.tr.vec
 data/users.json
 data/game_data.db
-data/wiki.tr.vec
+!data/game_data.db.gz
