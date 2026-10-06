@@ -206,6 +206,122 @@ def save_tdk_definition_db(game_key, definition):
     conn.close()
 
 
+def gemini_model_name():
+    return get_smtp_setting("GEMINI_MODEL", "gemini-3.5-flash-lite")
+
+
+def gemini_scoring_enabled():
+    return bool(get_smtp_setting("GEMINI_API_KEY"))
+
+
+def gemini_request(prompt):
+    api_key = get_smtp_setting("GEMINI_API_KEY")
+    if not api_key:
+        raise RuntimeError("Gemini API anahtarı secrets içinde tanımlı değil.")
+
+    response = requests.post(
+        f"https://generativelanguage.googleapis.com/v1beta/models/{gemini_model_name()}:generateContent",
+        headers={"x-goog-api-key": api_key},
+        json={
+            "contents": [{"parts": [{"text": prompt}]}],
+            "generationConfig": {
+                "temperature": 0,
+                "maxOutputTokens": 120,
+                "responseMimeType": "application/json"
+            }
+        },
+        timeout=(5, 20)
+    )
+    response.raise_for_status()
+    payload = response.json()
+    response_text = payload["candidates"][0]["content"]["parts"][0]["text"]
+    result = json.loads(response_text)
+    if not isinstance(result, dict):
+        raise ValueError("Gemini yanıtı JSON nesnesi değil.")
+    return result
+
+
+def get_gemini_similarity(game_key, target_word, guess_word):
+    model_name = gemini_model_name()
+    conn = sqlite3.connect(DB_FILE)
+    cached = conn.execute(
+        "SELECT score FROM ai_guess_scores WHERE target_word=? AND guess_word=? AND model_name=?",
+        (target_word, guess_word, model_name)
+    ).fetchone()
+    conn.close()
+    if cached:
+        return cached[0]
+
+    result = gemini_request(
+        "Türkçe kelime tahmin oyununda iki sözcüğün ANLAM yakınlığını 0-100 puanla. "
+        "Yazım benzerliğini, ortak harfleri ve ek benzerliğini dikkate alma; yalnızca anlamı değerlendir. "
+        "Neredeyse eş anlamlı 90-99, doğrudan ve güçlü çağrışım 70-89, aynı anlam alanı 45-69, "
+        "zayıf ilişki 20-44, ilgisiz sözcük 0-19 olsun. Aynı harf/ek benzerliği tek başına ilişki sayılmaz. "
+        "Hedef sözcük: " + target_word + "\nTahmin: " + guess_word + "\n"
+        'Sadece şu JSON biçimini döndür: {"score": 0}'
+    )
+    score = result.get("score")
+    if isinstance(score, bool) or not isinstance(score, (int, float)):
+        raise ValueError("Gemini geçerli bir benzerlik puanı döndürmedi.")
+    score = max(0, min(100, round(score)))
+
+    conn = sqlite3.connect(DB_FILE)
+    conn.execute(
+        "INSERT OR REPLACE INTO ai_guess_scores (target_word, guess_word, model_name, score) VALUES (?, ?, ?, ?)",
+        (target_word, guess_word, model_name, score)
+    )
+    conn.commit()
+    conn.close()
+    return score
+
+
+def get_gemini_hint_words(game_key, target_word):
+    conn = sqlite3.connect(DB_FILE)
+    cached = conn.execute(
+        "SELECT word FROM ai_hint_words WHERE game_key=? AND target_word=? ORDER BY slot",
+        (game_key, target_word)
+    ).fetchall()
+    if cached:
+        conn.close()
+        return [row[0] for row in cached]
+    allowed_words = {
+        row[0] for row in conn.execute(
+            "SELECT word FROM clean_word_ranks WHERE game_key=?",
+            (game_key,)
+        ).fetchall()
+    }
+    conn.close()
+
+    result = gemini_request(
+        "Türkçe kelime yakınlığı oyununda hedef sözcük için 5 yaygın, yalın, tek sözcüklü "
+        "anlam/çağrışım ipucu üret. Özel ad, çekimli biçim, yazımca benzeyen sözcük veya hedefin kendisini verme. "
+        "Hedef: " + target_word + "\n"
+        'Sadece JSON döndür: {"words": ["kelime1", "kelime2", "kelime3", "kelime4", "kelime5"]}'
+    )
+    candidates = result.get("words", [])
+    if not isinstance(candidates, list):
+        return []
+
+    hints = []
+    for candidate in candidates:
+        if not isinstance(candidate, str):
+            continue
+        word = tr_lower(candidate)
+        if word != target_word and word.isalpha() and word in allowed_words and word not in hints:
+            hints.append(word)
+        if len(hints) == 5:
+            break
+
+    conn = sqlite3.connect(DB_FILE)
+    conn.executemany(
+        "INSERT OR REPLACE INTO ai_hint_words (game_key, target_word, slot, word) VALUES (?, ?, ?, ?)",
+        [(game_key, target_word, slot, word) for slot, word in enumerate(hints, start=1)]
+    )
+    conn.commit()
+    conn.close()
+    return hints
+
+
 @st.cache_data(ttl=30, show_spinner=False)
 def cached_tdk_definition(target_word):
     from generate_daily_db import fetch_tdk_definition
@@ -319,6 +435,25 @@ def initialize_daily_play_storage():
         mode TEXT NOT NULL,
         played_at TEXT NOT NULL,
         PRIMARY KEY (username, game_date)
+    )
+    """)
+    conn.execute("""
+    CREATE TABLE IF NOT EXISTS ai_guess_scores (
+        target_word TEXT NOT NULL,
+        guess_word TEXT NOT NULL,
+        model_name TEXT NOT NULL,
+        score INTEGER NOT NULL,
+        PRIMARY KEY (target_word, guess_word, model_name)
+    )
+    """)
+    conn.execute("""
+    CREATE TABLE IF NOT EXISTS ai_hint_words (
+        game_key TEXT NOT NULL,
+        target_word TEXT NOT NULL,
+        slot INTEGER NOT NULL,
+        word TEXT NOT NULL,
+        PRIMARY KEY (game_key, target_word, slot),
+        UNIQUE (game_key, target_word, word)
     )
     """)
     conn.commit()
@@ -824,6 +959,10 @@ def get_tier_info(item):
         return "🧊", "Buz Gibi", 2.0, "badge-ice"
 
 def start_new_game(mode):
+    if not st.session_state.user:
+        st.error("Oyuna başlayabilmek için giriş yapmalısınız.")
+        return False
+
     if mode == "1_word":
         game_keys = ["mode_1_word_kelime_1"]
     else:
@@ -833,6 +972,7 @@ def start_new_game(mode):
         return False
 
     st.session_state.game_mode = mode
+    st.session_state.scoring_engine = "gemini" if gemini_scoring_enabled() else "fasttext"
     st.session_state.max_steps = len(game_keys)
     st.session_state.active_game_keys = game_keys
     st.session_state.current_step = 1
@@ -842,6 +982,7 @@ def start_new_game(mode):
     for idx, key in enumerate(game_keys, start=1):
         st.session_state.game_states[idx] = {
             "game_key": key,
+            "scoring_engine": st.session_state.scoring_engine,
             "guesses": [],
             "won": False,
             "joker_first_letter": False,
@@ -869,18 +1010,27 @@ if st.session_state.page == "welcome":
     with col_left:
         st.markdown("<div class='section-title'>🎮 Oyun Modu Seçin</div>", unsafe_allow_html=True)
         st.caption("Günün gizli kelimelerini çözmek için modunuzu seçin:")
-        played_today = has_played_today(st.session_state.user, today_str)
-        if played_today:
+
+        # 1. Kullanıcının oturum açıp açmadığını kontrol ediyoruz
+        is_logged_in = bool(st.session_state.user)
+        played_today = has_played_today(st.session_state.user, today_str) if is_logged_in else False
+
+        # 2. Giriş yapmadıysa uyarı veriyoruz
+        if not is_logged_in:
+            st.warning("🔒 Oyuna başlayabilmek için lütfen aşağıdan giriş yapın veya kayıt olun.")
+        elif played_today:
             st.info("Bugünün oyun hakkı kullanıldı. Yeni oyun yarın açılacak.")
 
         c_btn1, c_btn2 = st.columns(2)
         with c_btn1:
-            if st.button("Tek Kelime\n(1 Kelime)", width="stretch", disabled=played_today):
+            # 3. Giriş yapılmadıysa (not is_logged_in) buton pasif/kilitli olur
+            if st.button("Tek Kelime\n(1 Kelime)", width="stretch", disabled=played_today or not is_logged_in):
                 if start_new_game("1_word"):
                     st.rerun()
                 
         with c_btn2:
-            if st.button("Üç Kelime\n(3 Kelime)", width="stretch", disabled=played_today):
+            # 3. Giriş yapılmadıysa (not is_logged_in) buton pasif/kilitli olur
+            if st.button("Üç Kelime\n(3 Kelime)", width="stretch", disabled=played_today or not is_logged_in):
                 if start_new_game("3_word"):
                     st.rerun()
         st.divider()
@@ -1036,14 +1186,17 @@ elif st.session_state.page == "playing":
         st.error(f"'{game_key}' verileri yüklenemedi. Lütfen 'python generate_daily_db.py' çalıştırın.")
         st.stop()
 
-    word_rank_5 = get_word_by_hint_rank_db(game_key, 5)
-    word_rank_10 = get_word_by_hint_rank_db(game_key, 10)
+    ai_scoring = current_state.get("scoring_engine", "fasttext") == "gemini"
+    word_rank_5 = "" if ai_scoring else get_word_by_hint_rank_db(game_key, 5)
+    word_rank_10 = "" if ai_scoring else get_word_by_hint_rank_db(game_key, 10)
 
     # Üst Gezinti
     c_nav1, c_nav2 = st.columns([3, 1])
     with c_nav1:
         p_name = st.session_state.user if st.session_state.user else "Anonim Oyuncu"
         mode_label = "Tek kelime" if st.session_state.game_mode == "1_word" else "Üç kelime"
+        if ai_scoring:
+            mode_label += " · Gemini AI"
         st.markdown(
             f"<div class='game-brand'><strong>T.Ö.Z.</strong><span>{p_name} · {mode_label} · {today_str}</span></div>",
             unsafe_allow_html=True
@@ -1104,8 +1257,23 @@ elif st.session_state.page == "playing":
         with col_i1:
             unlocked = heat_score >= 30
             cls = "hint-box-light unlocked" if unlocked else "hint-box-light"
-            val = f"#50: <b>{tr_title(game_meta['word_50'])}</b><br>#100: <b>{tr_title(game_meta['word_100'])}</b><br>#150: <b>{tr_title(game_meta['word_150'])}</b>" if unlocked else "🔒 %30 Isıda Açılır"
-            st.markdown(f"<div class='{cls}'><div class='hint-box-title'>50., 100. ve 150. Yakın Sözcük</div><div class='hint-box-content'>{val}</div></div>", unsafe_allow_html=True)
+            if ai_scoring:
+                ai_hints = []
+                if unlocked:
+                    try:
+                        ai_hints = get_gemini_hint_words(game_key, game_meta["target_word"])
+                    except Exception:
+                        pass
+                val = "<br>".join(html.escape(tr_title(word)) for word in ai_hints)
+                if unlocked and not val:
+                    val = "AI ipuçları şu anda alınamıyor."
+                elif not unlocked:
+                    val = "🔒 %30 Isıda Açılır"
+                title = "Anlam İpuçları"
+            else:
+                val = f"#50: <b>{tr_title(game_meta['word_50'])}</b><br>#100: <b>{tr_title(game_meta['word_100'])}</b><br>#150: <b>{tr_title(game_meta['word_150'])}</b>" if unlocked else "🔒 %30 Isıda Açılır"
+                title = "50., 100. ve 150. Yakın Sözcük"
+            st.markdown(f"<div class='{cls}'><div class='hint-box-title'>{title}</div><div class='hint-box-content'>{val}</div></div>", unsafe_allow_html=True)
 
         with col_i2:
             unlocked = heat_score >= 60
@@ -1126,7 +1294,15 @@ elif st.session_state.page == "playing":
             st.info(f"🔤 **Son Harf Jokeri:** Hedef kelime **{target_last_letter}** harfi ile bitiyor.")
             
         if current_state.get("joker_top_words", False):
-            st.info(f"🎯 **5. ve 10. Kelime Jokeri:** En yakın #5: **{tr_title(word_rank_5)}** | En yakın #10: **{tr_title(word_rank_10)}**")
+            if ai_scoring:
+                try:
+                    ai_hints = get_gemini_hint_words(game_key, game_meta["target_word"])
+                except Exception:
+                    ai_hints = []
+                if ai_hints:
+                    st.info(f"🎯 **AI anlam ipucu:** {tr_title(ai_hints[0])}")
+            else:
+                st.info(f"🎯 **5. ve 10. Kelime Jokeri:** En yakın #5: **{tr_title(word_rank_5)}** | En yakın #10: **{tr_title(word_rank_10)}**")
 
         st.write("")
 
@@ -1135,10 +1311,24 @@ elif st.session_state.page == "playing":
 
         col_j1, col_j2, col_j3, col_j4 = st.columns(4)
         with col_j1:
-            if st.button("🎲 Rastgele Öner", disabled=is_disabled, width="stretch"):
-                suggested = get_random_word_db(game_key)
-                st.session_state[f"input_val_{step}"] = tr_title(suggested)
-                st.toast(f"Öneri: {tr_title(suggested)}", icon="💡")
+            suggestion_label = "🎲 AI sözcük önerisi" if ai_scoring else "🎲 Rastgele Öner"
+            if st.button(suggestion_label, disabled=is_disabled, width="stretch"):
+                if ai_scoring:
+                    try:
+                        available_hints = get_gemini_hint_words(game_key, game_meta["target_word"])
+                        suggested = next(
+                            (word for word in available_hints if word not in {guess["word"] for guess in current_state["guesses"]}),
+                            ""
+                        )
+                    except Exception:
+                        suggested = ""
+                else:
+                    suggested = get_random_word_db(game_key)
+                if suggested:
+                    st.session_state[f"input_val_{step}"] = tr_title(suggested)
+                    st.toast(f"Öneri: {tr_title(suggested)}", icon="💡")
+                else:
+                    st.warning("Şu anda yeni sözcük önerisi alınamıyor.")
 
         with col_j2:
             if st.button("🔤 İlk Harf (-5 Pn)", disabled=bool(is_disabled or current_state.get("joker_first_letter", False)), width="stretch"):
@@ -1151,7 +1341,8 @@ elif st.session_state.page == "playing":
                 st.rerun()
 
         with col_j4:
-            if st.button("🎯 5. & 10. Kelime (-5 Pn)", disabled=bool(is_disabled or current_state.get("joker_top_words", False)), width="stretch"):
+            joker_label = "🎯 AI ipucu (-5 Pn)" if ai_scoring else "🎯 5. & 10. Kelime (-5 Pn)"
+            if st.button(joker_label, disabled=bool(is_disabled or current_state.get("joker_top_words", False)), width="stretch"):
                 current_state["joker_top_words"] = True
                 st.rerun()
 
@@ -1166,34 +1357,51 @@ elif st.session_state.page == "playing":
             st.session_state[f"input_val_{step}"] = ""
             
             already_guessed = any(g["word"] == guess_input for g in current_state["guesses"])
-            hint_words = [
-                tr_lower(game_meta.get("word_50", "")),
-                tr_lower(game_meta.get("word_100", "")),
-                tr_lower(game_meta.get("word_150", ""))
-            ]
+            if ai_scoring:
+                try:
+                    hint_words = get_gemini_hint_words(game_key, game_meta["target_word"])
+                except Exception:
+                    hint_words = []
+            else:
+                hint_words = [
+                    tr_lower(game_meta.get("word_50", "")),
+                    tr_lower(game_meta.get("word_100", "")),
+                    tr_lower(game_meta.get("word_150", ""))
+                ]
             
             if already_guessed:
                 st.warning("Bu kelimeyi zaten denediniz.")
             elif heat_score >= 30 and guess_input in hint_words:
                 st.warning("⚠️ Bu kelime ipucu olarak zaten verildi.")
             else:
-                info = get_word_info_db(game_key, guess_input)
-                
-                current_state["guesses"].append({
-                    "word": guess_input,
-                    "rank": info["rank"],
-                    "sim": info["sim"]
-                })
+                try:
+                    if guess_input == tr_lower(game_meta["target_word"]):
+                        info = {"rank": 1, "sim": 100.0}
+                    elif ai_scoring:
+                        info = {"rank": 99999, "sim": get_gemini_similarity(game_key, game_meta["target_word"], guess_input)}
+                    else:
+                        info = get_word_info_db(game_key, guess_input)
+                except Exception as error:
+                    st.session_state[f"input_val_{step}"] = tr_title(guess_input)
+                    st.error(f"AI değerlendirmesi alınamadı ({type(error).__name__}); tahmin kaydedilmedi.")
+                    info = None
 
-                if info["rank"] == 1:
-                    current_state["won"] = True
-                    st.balloons()
-                elif is_final_chance:
-                    current_state["failed_final"] = True
-                elif info["rank"] == 99999:
-                    st.toast(f"'{tr_title(guess_input)}' eklendi (+%2 Isı).", icon="💡")
-                    
-                st.rerun()
+                if info is not None:
+                    current_state["guesses"].append({
+                        "word": guess_input,
+                        "rank": info["rank"],
+                        "sim": info["sim"]
+                    })
+
+                    if info["rank"] == 1:
+                        current_state["won"] = True
+                        st.balloons()
+                    elif is_final_chance:
+                        current_state["failed_final"] = True
+                    elif info["rank"] == 99999 and not ai_scoring:
+                        st.toast(f"'{tr_title(guess_input)}' eklendi (+%2 Isı).", icon="💡")
+
+                    st.rerun()
 
         # Bitiş Mesajı
         if (attempts_left <= 0 or current_state.get("failed_final", False)) and not current_state["won"]:
@@ -1203,7 +1411,10 @@ elif st.session_state.page == "playing":
         # Tahmin Akışı
         if current_state["guesses"]:
             st.markdown("<div class='section-title' style='margin-top:16px;'>Tahmin Akışı</div>", unsafe_allow_html=True)
-            sorted_guesses = sorted(current_state["guesses"], key=lambda x: x["rank"])
+            sorted_guesses = sorted(
+                current_state["guesses"],
+                key=(lambda item: -item["sim"]) if ai_scoring else (lambda item: item["rank"])
+            )
 
             for item in sorted_guesses:
                 word = tr_title(item["word"])
@@ -1213,6 +1424,13 @@ elif st.session_state.page == "playing":
                 
                 if rank == 1:
                     st.success(f"🎉 **{word}** — Doğru Kelime! (Sıralama: #1)")
+                elif ai_scoring:
+                    st.markdown(f"""
+                    <div class='guess-row {badge_css}'>
+                        <span>{icon} <b>{word}</b></span>
+                        <span style='color:#475569; font-size:0.85rem;'>AI yakınlık • <span class='mono-num'>%{sim:.0f}</span> (+%{points:.0f} Isı)</span>
+                    </div>
+                    """, unsafe_allow_html=True)
                 elif rank > 30000:
                     st.markdown(f"""
                     <div class='guess-row {badge_css}'>
@@ -1236,7 +1454,7 @@ elif st.session_state.page == "playing":
         
         if current_state["won"]:
             rem_att = max(0, MAX_ATTEMPTS - len(current_state["guesses"]))
-            base_score = 50
+            base_score = 10
             joker_penalty = (
                 (5 if current_state.get("joker_first_letter", False) else 0) +
                 (5 if current_state.get("joker_last_letter", False) else 0) +
@@ -1276,8 +1494,6 @@ elif st.session_state.page == "playing":
                     if st.session_state.user:
                         record_score(st.session_state.user, st.session_state.game_mode, total_game_score, guessed_words)
                         st.toast("Skorunuz kaydedildi.", icon="🏆")
-                    else:
-                        st.warning("Anonim modda olduğunuz için skor kaydedilmedi.")
                     st.session_state.score_recorded = True
                     
                 if st.button("Ana Menüye Dön"):

@@ -1,2234 +1,596 @@
 {
-    "2026-10-06": {
-        "mode_1_word_kelime_1": "çay",
-        "mode_3_word_kelime_1": "demlik",
-        "mode_3_word_kelime_2": "bardak",
-        "mode_3_word_kelime_3": "şeker"
-    },
-    "2026-10-07": {
-        "mode_1_word_kelime_1": "kahve",
-        "mode_3_word_kelime_1": "çekirdek",
-        "mode_3_word_kelime_2": "değirmen",
-        "mode_3_word_kelime_3": "fincan"
-    },
-    "2026-10-08": {
-        "mode_1_word_kelime_1": "çikolata",
-        "mode_3_word_kelime_1": "kakao",
-        "mode_3_word_kelime_2": "süt",
-        "mode_3_word_kelime_3": "fındık"
-    },
-    "2026-10-09": {
-        "mode_1_word_kelime_1": "pasta",
-        "mode_3_word_kelime_1": "krema",
-        "mode_3_word_kelime_2": "mum",
-        "mode_3_word_kelime_3": "dilim"
-    },
-    "2026-10-10": {
-        "mode_1_word_kelime_1": "bisküvi",
-        "mode_3_word_kelime_1": "kurabiye",
-        "mode_3_word_kelime_2": "fırın",
-        "mode_3_word_kelime_3": "un"
-    },
-    "2026-10-11": {
-        "mode_1_word_kelime_1": "fırıncı",
-        "mode_3_word_kelime_1": "tepsi",
-        "mode_3_word_kelime_2": "ekmek",
-        "mode_3_word_kelime_3": "simit"
-    },
-    "2026-10-12": {
-        "mode_1_word_kelime_1": "pazar",
-        "mode_3_word_kelime_1": "tezgah",
-        "mode_3_word_kelime_2": "terazi",
-        "mode_3_word_kelime_3": "file"
-    },
-    "2026-10-13": {
-        "mode_1_word_kelime_1": "manav",
-        "mode_3_word_kelime_1": "meyve",
-        "mode_3_word_kelime_2": "sebze",
-        "mode_3_word_kelime_3": "taze"
-    },
-    "2026-10-14": {
-        "mode_1_word_kelime_1": "kasap",
-        "mode_3_word_kelime_1": "bıçak",
-        "mode_3_word_kelime_2": "kıyma",
-        "mode_3_word_kelime_3": "bonfile"
-    },
-    "2026-10-15": {
-        "mode_1_word_kelime_1": "balıkçı",
-        "mode_3_word_kelime_1": "hamsi",
-        "mode_3_word_kelime_2": "tezgah",
-        "mode_3_word_kelime_3": "buzlu"
-    },
-    "2026-10-16": {
-        "mode_1_word_kelime_1": "market",
-        "mode_3_word_kelime_1": "kasa",
-        "mode_3_word_kelime_2": "sepet",
-        "mode_3_word_kelime_3": "fiş"
-    },
-    "2026-10-17": {
-        "mode_1_word_kelime_1": "alışveriş",
-        "mode_3_word_kelime_1": "poşet",
-        "mode_3_word_kelime_2": "kart",
-        "mode_3_word_kelime_3": "indirim"
-    },
-    "2026-10-18": {
-        "mode_1_word_kelime_1": "mağaza",
-        "mode_3_word_kelime_1": "vitrin",
-        "mode_3_word_kelime_2": "manken",
-        "mode_3_word_kelime_3": "askı"
-    },
-    "2026-10-19": {
-        "mode_1_word_kelime_1": "terzi",
-        "mode_3_word_kelime_1": "iğne",
-        "mode_3_word_kelime_2": "iplik",
-        "mode_3_word_kelime_3": "kumaş"
-    },
-    "2026-10-20": {
-        "mode_1_word_kelime_1": "dikiş",
-        "mode_3_word_kelime_1": "makine",
-        "mode_3_word_kelime_2": "desen",
-        "mode_3_word_kelime_3": "prova"
-    },
-    "2026-10-21": {
-        "mode_1_word_kelime_1": "elbise",
-        "mode_3_word_kelime_1": "gömlek",
-        "mode_3_word_kelime_2": "pantolon",
-        "mode_3_word_kelime_3": "ceket"
-    },
-    "2026-10-22": {
-        "mode_1_word_kelime_1": "ayakkabı",
-        "mode_3_word_kelime_1": "bağcık",
-        "mode_3_word_kelime_2": "taban",
-        "mode_3_word_kelime_3": "deri"
-    },
-    "2026-10-23": {
-        "mode_1_word_kelime_1": "çanta",
-        "mode_3_word_kelime_1": "deri",
-        "mode_3_word_kelime_2": "fermuar",
-        "mode_3_word_kelime_3": "toka"
-    },
-    "2026-10-24": {
-        "mode_1_word_kelime_1": "takı",
-        "mode_3_word_kelime_1": "yüzük",
-        "mode_3_word_kelime_2": "kolye",
-        "mode_3_word_kelime_3": "bilezik"
-    },
-    "2026-10-25": {
-        "mode_1_word_kelime_1": "saatçi",
-        "mode_3_word_kelime_1": "akrep",
-        "mode_3_word_kelime_2": "yelkovan",
-        "mode_3_word_kelime_3": "zemberek"
-    },
-    "2026-10-26": {
-        "mode_1_word_kelime_1": "gözlükçü",
-        "mode_3_word_kelime_1": "çerçeve",
-        "mode_3_word_kelime_2": "cam",
-        "mode_3_word_kelime_3": "lens"
-    },
-    "2026-10-27": {
-        "mode_1_word_kelime_1": "kuaför",
-        "mode_3_word_kelime_1": "makas",
-        "mode_3_word_kelime_2": "tarak",
-        "mode_3_word_kelime_3": "fön"
-    },
-    "2026-10-28": {
-        "mode_1_word_kelime_1": "berber",
-        "mode_3_word_kelime_1": "ustura",
-        "mode_3_word_kelime_2": "krem",
-        "mode_3_word_kelime_3": "ayna"
-    },
-    "2026-10-29": {
-        "mode_1_word_kelime_1": "parfüm",
-        "mode_3_word_kelime_1": "koku",
-        "mode_3_word_kelime_2": "şişe",
-        "mode_3_word_kelime_3": "esans"
-    },
-    "2026-10-30": {
-        "mode_1_word_kelime_1": "kozmetik",
-        "mode_3_word_kelime_1": "ruj",
-        "mode_3_word_kelime_2": "krem",
-        "mode_3_word_kelime_3": "bakım"
-    },
-    "2026-10-31": {
-        "mode_1_word_kelime_1": "temizlik",
-        "mode_3_word_kelime_1": "sabun",
-        "mode_3_word_kelime_2": "fırça",
-        "mode_3_word_kelime_3": "sünger"
-    },
-    "2026-11-01": {
-        "mode_1_word_kelime_1": "öğretmen",
-        "mode_3_word_kelime_1": "sevgi",
-        "mode_3_word_kelime_2": "saygı",
-        "mode_3_word_kelime_3": "bilgi"
-    },
-    "2026-11-02": {
-        "mode_1_word_kelime_1": "yaprak",
-        "mode_3_word_kelime_1": "toprak",
-        "mode_3_word_kelime_2": "sarı",
-        "mode_3_word_kelime_3": "kuru"
-    },
-    "2026-11-03": {
-        "mode_1_word_kelime_1": "soğuk",
-        "mode_3_word_kelime_1": "rüzgar",
-        "mode_3_word_kelime_2": "mont",
-        "mode_3_word_kelime_3": "atkı"
-    },
-    "2026-11-04": {
-        "mode_1_word_kelime_1": "el",
-        "mode_3_word_kelime_1": "eldiven",
-        "mode_3_word_kelime_2": "bere",
-        "mode_3_word_kelime_3": "şal"
-    },
-    "2026-11-05": {
-        "mode_1_word_kelime_1": "soba",
-        "mode_3_word_kelime_1": "odun",
-        "mode_3_word_kelime_2": "kömür",
-        "mode_3_word_kelime_3": "baca"
-    },
-    "2026-11-06": {
-        "mode_1_word_kelime_1": "kalorifer",
-        "mode_3_word_kelime_1": "petek",
-        "mode_3_word_kelime_2": "sıcak",
-        "mode_3_word_kelime_3": "kombi"
-    },
-    "2026-11-07": {
-        "mode_1_word_kelime_1": "pencere",
-        "mode_3_word_kelime_1": "buğu",
-        "mode_3_word_kelime_2": "yağmur",
-        "mode_3_word_kelime_3": "damla"
-    },
-    "2026-11-08": {
-        "mode_1_word_kelime_1": "şemsiye",
-        "mode_3_word_kelime_1": "rüzgar",
-        "mode_3_word_kelime_2": "yağmurluk",
-        "mode_3_word_kelime_3": "ıslak"
-    },
-    "2026-11-09": {
-        "mode_1_word_kelime_1": "çamur",
-        "mode_3_word_kelime_1": "çizme",
-        "mode_3_word_kelime_2": "sokak",
-        "mode_3_word_kelime_3": "birikinti"
-    },
-    "2026-11-10": {
-        "mode_1_word_kelime_1": "çorba",
-        "mode_3_word_kelime_1": "sıcak",
-        "mode_3_word_kelime_2": "kase",
-        "mode_3_word_kelime_3": "kaşık"
-    },
-    "2026-11-11": {
-        "mode_1_word_kelime_1": "ıhlamur",
-        "mode_3_word_kelime_1": "tarçın",
-        "mode_3_word_kelime_2": "zencefil",
-        "mode_3_word_kelime_3": "bal"
-    },
-    "2026-11-12": {
-        "mode_1_word_kelime_1": "bitki",
-        "mode_3_word_kelime_1": "çay",
-        "mode_3_word_kelime_2": "demlik",
-        "mode_3_word_kelime_3": "süzgeç"
-    },
-    "2026-11-13": {
-        "mode_1_word_kelime_1": "kitap",
-        "mode_3_word_kelime_1": "battaniye",
-        "mode_3_word_kelime_2": "huzur",
-        "mode_3_word_kelime_3": "koltuk"
-    },
-    "2026-11-14": {
-        "mode_1_word_kelime_1": "müzik",
-        "mode_3_word_kelime_1": "plak",
-        "mode_3_word_kelime_2": "pikap",
-        "mode_3_word_kelime_3": "nostalji"
-    },
-    "2026-11-15": {
-        "mode_1_word_kelime_1": "radyo",
-        "mode_3_word_kelime_1": "yayın",
-        "mode_3_word_kelime_2": "ses",
-        "mode_3_word_kelime_3": "dalga"
-    },
-    "2026-11-16": {
-        "mode_1_word_kelime_1": "sinema",
-        "mode_3_word_kelime_1": "bilet",
-        "mode_3_word_kelime_2": "mısır",
-        "mode_3_word_kelime_3": "salon"
-    },
-    "2026-11-17": {
-        "mode_1_word_kelime_1": "tiyatro",
-        "mode_3_word_kelime_1": "sahne",
-        "mode_3_word_kelime_2": "rol",
-        "mode_3_word_kelime_3": "alkış"
-    },
-    "2026-11-18": {
-        "mode_1_word_kelime_1": "opera",
-        "mode_3_word_kelime_1": "sanatçı",
-        "mode_3_word_kelime_2": "sahne",
-        "mode_3_word_kelime_3": "ses"
-    },
-    "2026-11-19": {
-        "mode_1_word_kelime_1": "müze",
-        "mode_3_word_kelime_1": "galeri",
-        "mode_3_word_kelime_2": "tablo",
-        "mode_3_word_kelime_3": "sergi"
-    },
-    "2026-11-20": {
-        "mode_1_word_kelime_1": "ressam",
-        "mode_3_word_kelime_1": "fırça",
-        "mode_3_word_kelime_2": "tuval",
-        "mode_3_word_kelime_3": "boya"
-    },
-    "2026-11-21": {
-        "mode_1_word_kelime_1": "heykel",
-        "mode_3_word_kelime_1": "mermer",
-        "mode_3_word_kelime_2": "kil",
-        "mode_3_word_kelime_3": "sanat"
-    },
-    "2026-11-22": {
-        "mode_1_word_kelime_1": "fotoğraf",
-        "mode_3_word_kelime_1": "kamera",
-        "mode_3_word_kelime_2": "sergi",
-        "mode_3_word_kelime_3": "kare"
-    },
-    "2026-11-23": {
-        "mode_1_word_kelime_1": "yazar",
-        "mode_3_word_kelime_1": "daktilo",
-        "mode_3_word_kelime_2": "kağıt",
-        "mode_3_word_kelime_3": "mürekkep"
-    },
-    "2026-11-24": {
-        "mode_1_word_kelime_1": "şair",
-        "mode_3_word_kelime_1": "şiir",
-        "mode_3_word_kelime_2": "kıta",
-        "mode_3_word_kelime_3": "mısra"
-    },
-    "2026-11-25": {
-        "mode_1_word_kelime_1": "edebiyat",
-        "mode_3_word_kelime_1": "dergi",
-        "mode_3_word_kelime_2": "makale",
-        "mode_3_word_kelime_3": "eleştiri"
-    },
-    "2026-11-26": {
-        "mode_1_word_kelime_1": "felsefe",
-        "mode_3_word_kelime_1": "düşünce",
-        "mode_3_word_kelime_2": "akıl",
-        "mode_3_word_kelime_3": "soru"
-    },
-    "2026-11-27": {
-        "mode_1_word_kelime_1": "mantık",
-        "mode_3_word_kelime_1": "doğru",
-        "mode_3_word_kelime_2": "yanlış",
-        "mode_3_word_kelime_3": "sonuç"
-    },
-    "2026-11-28": {
-        "mode_1_word_kelime_1": "bilim",
-        "mode_3_word_kelime_1": "deney",
-        "mode_3_word_kelime_2": "gözlem",
-        "mode_3_word_kelime_3": "kanıt"
-    },
-    "2026-11-29": {
-        "mode_1_word_kelime_1": "tarih",
-        "mode_3_word_kelime_1": "geçmiş",
-        "mode_3_word_kelime_2": "belge",
-        "mode_3_word_kelime_3": "arşiv"
-    },
-    "2026-11-30": {
-        "mode_1_word_kelime_1": "coğrafya",
-        "mode_3_word_kelime_1": "harita",
-        "mode_3_word_kelime_2": "iklim",
-        "mode_3_word_kelime_3": "arazi"
-    },
-    "2026-12-01": {
-        "mode_1_word_kelime_1": "kış",
-        "mode_3_word_kelime_1": "kar",
-        "mode_3_word_kelime_2": "soğuk",
-        "mode_3_word_kelime_3": "rüzgar"
-    },
-    "2026-12-02": {
-        "mode_1_word_kelime_1": "kartopu",
-        "mode_3_word_kelime_1": "oyun",
-        "mode_3_word_kelime_2": "çocuk",
-        "mode_3_word_kelime_3": "eğlence"
-    },
-    "2026-12-03": {
-        "mode_1_word_kelime_1": "kış",
-        "mode_3_word_kelime_1": "havuç",
-        "mode_3_word_kelime_2": "kömür",
-        "mode_3_word_kelime_3": "atkı"
-    },
-    "2026-12-04": {
-        "mode_1_word_kelime_1": "buz",
-        "mode_3_word_kelime_1": "paten",
-        "mode_3_word_kelime_2": "pist",
-        "mode_3_word_kelime_3": "kayma"
-    },
-    "2026-12-05": {
-        "mode_1_word_kelime_1": "kayak",
-        "mode_3_word_kelime_1": "dağcı",
-        "mode_3_word_kelime_2": "kar",
-        "mode_3_word_kelime_3": "mont"
-    },
-    "2026-12-06": {
-        "mode_1_word_kelime_1": "kızak",
-        "mode_3_word_kelime_1": "eğim",
-        "mode_3_word_kelime_2": "hızlar",
-        "mode_3_word_kelime_3": "eğlence"
-    },
-    "2026-12-07": {
-        "mode_1_word_kelime_1": "çam",
-        "mode_3_word_kelime_1": "kozalak",
-        "mode_3_word_kelime_2": "yeşil",
-        "mode_3_word_kelime_3": "orman"
-    },
-    "2026-12-08": {
-        "mode_1_word_kelime_1": "süs",
-        "mode_3_word_kelime_1": "ışık",
-        "mode_3_word_kelime_2": "yıldız",
-        "mode_3_word_kelime_3": "kırmızı"
-    },
-    "2026-12-09": {
-        "mode_1_word_kelime_1": "hediye",
-        "mode_3_word_kelime_1": "paket",
-        "mode_3_word_kelime_2": "kurdele",
-        "mode_3_word_kelime_3": "sürpriz"
-    },
-    "2026-12-10": {
-        "mode_1_word_kelime_1": "yılbaşı",
-        "mode_3_word_kelime_1": "takvim",
-        "mode_3_word_kelime_2": "aralık",
-        "mode_3_word_kelime_3": "gece"
-    },
-    "2026-12-11": {
-        "mode_1_word_kelime_1": "saat",
-        "mode_3_word_kelime_1": "gece",
-        "mode_3_word_kelime_2": "yıl",
-        "mode_3_word_kelime_3": "umut"
-    },
-    "2026-12-12": {
-        "mode_1_word_kelime_1": "dilek",
-        "mode_3_word_kelime_1": "mektup",
-        "mode_3_word_kelime_2": "zarfı",
-        "mode_3_word_kelime_3": "hayal"
-    },
-    "2026-12-13": {
-        "mode_1_word_kelime_1": "kutlama",
-        "mode_3_word_kelime_1": "parti",
-        "mode_3_word_kelime_2": "müzik",
-        "mode_3_word_kelime_3": "coşku"
-    },
-    "2026-12-14": {
-        "mode_1_word_kelime_1": "pasta",
-        "mode_3_word_kelime_1": "mum",
-        "mode_3_word_kelime_2": "dilim",
-        "mode_3_word_kelime_3": "ikram"
-    },
-    "2026-12-15": {
-        "mode_1_word_kelime_1": "kestane",
-        "mode_3_word_kelime_1": "fırın",
-        "mode_3_word_kelime_2": "köz",
-        "mode_3_word_kelime_3": "sıcak"
-    },
-    "2026-12-16": {
-        "mode_1_word_kelime_1": "salep",
-        "mode_3_word_kelime_1": "tarçın",
-        "mode_3_word_kelime_2": "fincan",
-        "mode_3_word_kelime_3": "duman"
-    },
-    "2026-12-17": {
-        "mode_1_word_kelime_1": "boza",
-        "mode_3_word_kelime_1": "leblebi",
-        "mode_3_word_kelime_2": "tarçın",
-        "mode_3_word_kelime_3": "şeker"
-    },
-    "2026-12-18": {
-        "mode_1_word_kelime_1": "ceviz",
-        "mode_3_word_kelime_1": "fındık",
-        "mode_3_word_kelime_2": "badem",
-        "mode_3_word_kelime_3": "üzüm"
-    },
-    "2026-12-19": {
-        "mode_1_word_kelime_1": "incir",
-        "mode_3_word_kelime_1": "kayısı",
-        "mode_3_word_kelime_2": "reçel",
-        "mode_3_word_kelime_3": "tatlı"
-    },
-    "2026-12-20": {
-        "mode_1_word_kelime_1": "balkabağı",
-        "mode_3_word_kelime_1": "fırın",
-        "mode_3_word_kelime_2": "tahin",
-        "mode_3_word_kelime_3": "ceviz"
-    },
-    "2026-12-21": {
-        "mode_1_word_kelime_1": "nar",
-        "mode_3_word_kelime_1": "tane",
-        "mode_3_word_kelime_2": "kırmızı",
-        "mode_3_word_kelime_3": "bereket"
-    },
-    "2026-12-22": {
-        "mode_1_word_kelime_1": "portakal",
-        "mode_3_word_kelime_1": "tarçın",
-        "mode_3_word_kelime_2": "koku",
-        "mode_3_word_kelime_3": "dilim"
-    },
-    "2026-12-23": {
-        "mode_1_word_kelime_1": "mandalina",
-        "mode_3_word_kelime_1": "kabuk",
-        "mode_3_word_kelime_2": "vitamin",
-        "mode_3_word_kelime_3": "taze"
-    },
-    "2026-12-24": {
-        "mode_1_word_kelime_1": "ev",
-        "mode_3_word_kelime_1": "huzur",
-        "mode_3_word_kelime_2": "soba",
-        "mode_3_word_kelime_3": "aile"
-    },
-    "2026-12-25": {
-        "mode_1_word_kelime_1": "sofra",
-        "mode_3_word_kelime_1": "akşam",
-        "mode_3_word_kelime_2": "yemek",
-        "mode_3_word_kelime_3": "sohbet"
-    },
-    "2026-12-26": {
-        "mode_1_word_kelime_1": "dostluk",
-        "mode_3_word_kelime_1": "güven",
-        "mode_3_word_kelime_2": "sevgi",
-        "mode_3_word_kelime_3": "paylaşım"
-    },
-    "2026-12-27": {
-        "mode_1_word_kelime_1": "teşekkür",
-        "mode_3_word_kelime_1": "tebessüm",
-        "mode_3_word_kelime_2": "iyilik",
-        "mode_3_word_kelime_3": "kalp"
-    },
-    "2026-12-28": {
-        "mode_1_word_kelime_1": "yolculuk",
-        "mode_3_word_kelime_1": "anı",
-        "mode_3_word_kelime_2": "fotoğraf",
-        "mode_3_word_kelime_3": "günlük"
-    },
-    "2026-12-29": {
-        "mode_1_word_kelime_1": "zaman",
-        "mode_3_word_kelime_1": "hatıra",
-        "mode_3_word_kelime_2": "geçmiş",
-        "mode_3_word_kelime_3": "gelecek"
-    },
-    "2026-12-30": {
-        "mode_1_word_kelime_1": "yeni",
-        "mode_3_word_kelime_1": "başlangıç",
-        "mode_3_word_kelime_2": "hedef",
-        "mode_3_word_kelime_3": "başarı"
-    },
-    "2026-12-31": {
-        "mode_1_word_kelime_1": "mutluluk",
-        "mode_3_word_kelime_1": "sağlık",
-        "mode_3_word_kelime_2": "huzur",
-        "mode_3_word_kelime_3": "şans"
-    },
-    "2027-01-01": {
-        "mode_1_word_kelime_1": "kitap",
-        "mode_3_word_kelime_1": "kalem",
-        "mode_3_word_kelime_2": "bilgisayar",
-        "mode_3_word_kelime_3": "telefon"
-    },
-    "2027-01-02": {
-        "mode_1_word_kelime_1": "deniz",
-        "mode_3_word_kelime_1": "güneş",
-        "mode_3_word_kelime_2": "orman",
-        "mode_3_word_kelime_3": "şehir"
-    },
-    "2027-01-03": {
-        "mode_1_word_kelime_1": "müzik",
-        "mode_3_word_kelime_1": "sahil",
-        "mode_3_word_kelime_2": "sistem",
-        "mode_3_word_kelime_3": "bilgi"
-    },
-    "2027-01-04": {
-        "mode_1_word_kelime_1": "araba",
-        "mode_3_word_kelime_1": "evren",
-        "mode_3_word_kelime_2": "bahçe",
-        "mode_3_word_kelime_3": "yağmur"
-    },
-    "2027-01-05": {
-        "mode_1_word_kelime_1": "toprak",
-        "mode_3_word_kelime_1": "rüzgar",
-        "mode_3_word_kelime_2": "yıldız",
-        "mode_3_word_kelime_3": "bulut"
-    },
-    "2027-01-06": {
-        "mode_1_word_kelime_1": "yaprak",
-        "mode_3_word_kelime_1": "çiçek",
-        "mode_3_word_kelime_2": "meyve",
-        "mode_3_word_kelime_3": "ağaç"
-    },
-    "2027-01-07": {
-        "mode_1_word_kelime_1": "insan",
-        "mode_3_word_kelime_1": "çocuk",
-        "mode_3_word_kelime_2": "anne",
-        "mode_3_word_kelime_3": "baba"
-    },
-    "2027-01-08": {
-        "mode_1_word_kelime_1": "okul",
-        "mode_3_word_kelime_1": "sınıf",
-        "mode_3_word_kelime_2": "öğrenci",
-        "mode_3_word_kelime_3": "öğretmen"
-    },
-    "2027-01-09": {
-        "mode_1_word_kelime_1": "dünya",
-        "mode_3_word_kelime_1": "uzay",
-        "mode_3_word_kelime_2": "gezegen",
-        "mode_3_word_kelime_3": "uydu"
-    },
-    "2027-01-10": {
-        "mode_1_word_kelime_1": "zaman",
-        "mode_3_word_kelime_1": "saat",
-        "mode_3_word_kelime_2": "dakika",
-        "mode_3_word_kelime_3": "saniye"
-    },
-    "2027-01-11": {
-        "mode_1_word_kelime_1": "yazar",
-        "mode_3_word_kelime_1": "roman",
-        "mode_3_word_kelime_2": "hikaye",
-        "mode_3_word_kelime_3": "masal"
-    },
-    "2027-01-12": {
-        "mode_1_word_kelime_1": "resim",
-        "mode_3_word_kelime_1": "sanat",
-        "mode_3_word_kelime_2": "tiyatro",
-        "mode_3_word_kelime_3": "sinema"
-    },
-    "2027-01-13": {
-        "mode_1_word_kelime_1": "yemek",
-        "mode_3_word_kelime_1": "ekmek",
-        "mode_3_word_kelime_2": "sofra",
-        "mode_3_word_kelime_3": "mutfak"
-    },
-    "2027-01-14": {
-        "mode_1_word_kelime_1": "kahve",
-        "mode_3_word_kelime_1": "çay",
-        "mode_3_word_kelime_2": "fincan",
-        "mode_3_word_kelime_3": "bardak"
-    },
-    "2027-01-15": {
-        "mode_1_word_kelime_1": "kapı",
-        "mode_3_word_kelime_1": "pencere",
-        "mode_3_word_kelime_2": "duvar",
-        "mode_3_word_kelime_3": "tavan"
-    },
-    "2027-01-16": {
-        "mode_1_word_kelime_1": "sokak",
-        "mode_3_word_kelime_1": "cadde",
-        "mode_3_word_kelime_2": "meydan",
-        "mode_3_word_kelime_3": "köprü"
-    },
-    "2027-01-17": {
-        "mode_1_word_kelime_1": "şehir",
-        "mode_3_word_kelime_1": "kasaba",
-        "mode_3_word_kelime_2": "köy",
-        "mode_3_word_kelime_3": "ülke"
-    },
-    "2027-01-18": {
-        "mode_1_word_kelime_1": "deniz",
-        "mode_3_word_kelime_1": "dalga",
-        "mode_3_word_kelime_2": "liman",
-        "mode_3_word_kelime_3": "gemi"
-    },
-    "2027-01-19": {
-        "mode_1_word_kelime_1": "nehir",
-        "mode_3_word_kelime_1": "ırmak",
-        "mode_3_word_kelime_2": "vadi",
-        "mode_3_word_kelime_3": "şelale"
-    },
-    "2027-01-20": {
-        "mode_1_word_kelime_1": "dağcı",
-        "mode_3_word_kelime_1": "zirve",
-        "mode_3_word_kelime_2": "mağara",
-        "mode_3_word_kelime_3": "patika"
-    },
-    "2027-01-21": {
-        "mode_1_word_kelime_1": "hava",
-        "mode_3_word_kelime_1": "ateş",
-        "mode_3_word_kelime_2": "toprak",
-        "mode_3_word_kelime_3": "su"
-    },
-    "2027-01-22": {
-        "mode_1_word_kelime_1": "ışık",
-        "mode_3_word_kelime_1": "gölge",
-        "mode_3_word_kelime_2": "renk",
-        "mode_3_word_kelime_3": "desen"
-    },
-    "2027-01-23": {
-        "mode_1_word_kelime_1": "ayna",
-        "mode_3_word_kelime_1": "cam",
-        "mode_3_word_kelime_2": "kristal",
-        "mode_3_word_kelime_3": "elmas"
-    },
-    "2027-01-24": {
-        "mode_1_word_kelime_1": "altın",
-        "mode_3_word_kelime_1": "gümüş",
-        "mode_3_word_kelime_2": "bakır",
-        "mode_3_word_kelime_3": "demir"
-    },
-    "2027-01-25": {
-        "mode_1_word_kelime_1": "para",
-        "mode_3_word_kelime_1": "banka",
-        "mode_3_word_kelime_2": "borsa",
-        "mode_3_word_kelime_3": "kredi"
-    },
-    "2027-01-26": {
-        "mode_1_word_kelime_1": "işletme",
-        "mode_3_word_kelime_1": "şirket",
-        "mode_3_word_kelime_2": "büro",
-        "mode_3_word_kelime_3": "ofis"
-    },
-    "2027-01-27": {
-        "mode_1_word_kelime_1": "haber",
-        "mode_3_word_kelime_1": "gazete",
-        "mode_3_word_kelime_2": "dergi",
-        "mode_3_word_kelime_3": "radyo"
-    },
-    "2027-01-28": {
-        "mode_1_word_kelime_1": "telefon",
-        "mode_3_word_kelime_1": "ekran",
-        "mode_3_word_kelime_2": "kablo",
-        "mode_3_word_kelime_3": "batarya"
-    },
-    "2027-01-29": {
-        "mode_1_word_kelime_1": "yazılım",
-        "mode_3_word_kelime_1": "kodlama",
-        "mode_3_word_kelime_2": "mantık",
-        "mode_3_word_kelime_3": "veri"
-    },
-    "2027-01-30": {
-        "mode_1_word_kelime_1": "motor",
-        "mode_3_word_kelime_1": "araba",
-        "mode_3_word_kelime_2": "tren",
-        "mode_3_word_kelime_3": "uçak"
-    },
-    "2027-01-31": {
-        "mode_1_word_kelime_1": "yolcu",
-        "mode_3_word_kelime_1": "bilet",
-        "mode_3_word_kelime_2": "istasyon",
-        "mode_3_word_kelime_3": "peron"
-    },
-    "2027-02-01": {
-        "mode_1_word_kelime_1": "balık",
-        "mode_3_word_kelime_1": "olta",
-        "mode_3_word_kelime_2": "ağ",
-        "mode_3_word_kelime_3": "sandal"
-    },
-    "2027-02-02": {
-        "mode_1_word_kelime_1": "kuş",
-        "mode_3_word_kelime_1": "kanat",
-        "mode_3_word_kelime_2": "yuva",
-        "mode_3_word_kelime_3": "kafes"
-    },
-    "2027-02-03": {
-        "mode_1_word_kelime_1": "köpek",
-        "mode_3_word_kelime_1": "kedi",
-        "mode_3_word_kelime_2": "sokak",
-        "mode_3_word_kelime_3": "tasma"
-    },
-    "2027-02-04": {
-        "mode_1_word_kelime_1": "aslan",
-        "mode_3_word_kelime_1": "kaplan",
-        "mode_3_word_kelime_2": "orman",
-        "mode_3_word_kelime_3": "sahra"
-    },
-    "2027-02-05": {
-        "mode_1_word_kelime_1": "tarla",
-        "mode_3_word_kelime_1": "tohum",
-        "mode_3_word_kelime_2": "hasat",
-        "mode_3_word_kelime_3": "traktör"
-    },
-    "2027-02-06": {
-        "mode_1_word_kelime_1": "ekmek",
-        "mode_3_word_kelime_1": "fırın",
-        "mode_3_word_kelime_2": "buğday",
-        "mode_3_word_kelime_3": "hamur"
-    },
-    "2027-02-07": {
-        "mode_1_word_kelime_1": "peynir",
-        "mode_3_word_kelime_1": "sütçü",
-        "mode_3_word_kelime_2": "yoğurt",
-        "mode_3_word_kelime_3": "tereyağı"
-    },
-    "2027-02-08": {
-        "mode_1_word_kelime_1": "meyve",
-        "mode_3_word_kelime_1": "elma",
-        "mode_3_word_kelime_2": "armut",
-        "mode_3_word_kelime_3": "karpuz"
-    },
-    "2027-02-09": {
-        "mode_1_word_kelime_1": "sebze",
-        "mode_3_word_kelime_1": "domates",
-        "mode_3_word_kelime_2": "biber",
-        "mode_3_word_kelime_3": "patates"
-    },
-    "2027-02-10": {
-        "mode_1_word_kelime_1": "giysi",
-        "mode_3_word_kelime_1": "kazak",
-        "mode_3_word_kelime_2": "pantolon",
-        "mode_3_word_kelime_3": "ceket"
-    },
-    "2027-02-11": {
-        "mode_1_word_kelime_1": "ayakkabı",
-        "mode_3_word_kelime_1": "çorap",
-        "mode_3_word_kelime_2": "kemer",
-        "mode_3_word_kelime_3": "şapka"
-    },
-    "2027-02-12": {
-        "mode_1_word_kelime_1": "çanta",
-        "mode_3_word_kelime_1": "valiz",
-        "mode_3_word_kelime_2": "bavul",
-        "mode_3_word_kelime_3": "cüzdan"
-    },
-    "2027-02-13": {
-        "mode_1_word_kelime_1": "sabun",
-        "mode_3_word_kelime_1": "havlu",
-        "mode_3_word_kelime_2": "banyo",
-        "mode_3_word_kelime_3": "tarama"
-    },
-    "2027-02-14": {
-        "mode_1_word_kelime_1": "yatak",
-        "mode_3_word_kelime_1": "yastık",
-        "mode_3_word_kelime_2": "yorgan",
-        "mode_3_word_kelime_3": "çarşaf"
-    },
-    "2027-02-15": {
-        "mode_1_word_kelime_1": "koltuk",
-        "mode_3_word_kelime_1": "sehpa",
-        "mode_3_word_kelime_2": "halı",
-        "mode_3_word_kelime_3": "perde"
-    },
-    "2027-02-16": {
-        "mode_1_word_kelime_1": "mermer",
-        "mode_3_word_kelime_1": "fayans",
-        "mode_3_word_kelime_2": "beton",
-        "mode_3_word_kelime_3": "tuğla"
-    },
-    "2027-02-17": {
-        "mode_1_word_kelime_1": "çekiç",
-        "mode_3_word_kelime_1": "çivi",
-        "mode_3_word_kelime_2": "pense",
-        "mode_3_word_kelime_3": "matkap"
-    },
-    "2027-02-18": {
-        "mode_1_word_kelime_1": "lamba",
-        "mode_3_word_kelime_1": "ampul",
-        "mode_3_word_kelime_2": "fener",
-        "mode_3_word_kelime_3": "mum"
-    },
-    "2027-02-19": {
-        "mode_1_word_kelime_1": "kutu",
-        "mode_3_word_kelime_1": "sandık",
-        "mode_3_word_kelime_2": "sepet",
-        "mode_3_word_kelime_3": "paket"
-    },
-    "2027-02-20": {
-        "mode_1_word_kelime_1": "makas",
-        "mode_3_word_kelime_1": "bıçak",
-        "mode_3_word_kelime_2": "çatal",
-        "mode_3_word_kelime_3": "kaşık"
-    },
-    "2027-02-21": {
-        "mode_1_word_kelime_1": "tabak",
-        "mode_3_word_kelime_1": "tava",
-        "mode_3_word_kelime_2": "tencere",
-        "mode_3_word_kelime_3": "cezve"
-    },
-    "2027-02-22": {
-        "mode_1_word_kelime_1": "şeker",
-        "mode_3_word_kelime_1": "tuz",
-        "mode_3_word_kelime_2": "baharat",
-        "mode_3_word_kelime_3": "sirke"
-    },
-    "2027-02-23": {
-        "mode_1_word_kelime_1": "tatlı",
-        "mode_3_word_kelime_1": "pasta",
-        "mode_3_word_kelime_2": "börek",
-        "mode_3_word_kelime_3": "çikolata"
-    },
-    "2027-02-24": {
-        "mode_1_word_kelime_1": "dondurma",
-        "mode_3_word_kelime_1": "şerbet",
-        "mode_3_word_kelime_2": "reçel",
-        "mode_3_word_kelime_3": "bal"
-    },
-    "2027-02-25": {
-        "mode_1_word_kelime_1": "meyve",
-        "mode_3_word_kelime_1": "portakal",
-        "mode_3_word_kelime_2": "limon",
-        "mode_3_word_kelime_3": "mandalina"
-    },
-    "2027-02-26": {
-        "mode_1_word_kelime_1": "üzüm",
-        "mode_3_word_kelime_1": "incir",
-        "mode_3_word_kelime_2": "ceviz",
-        "mode_3_word_kelime_3": "fındık"
-    },
-    "2027-02-27": {
-        "mode_1_word_kelime_1": "zeytin",
-        "mode_3_word_kelime_1": "yağ",
-        "mode_3_word_kelime_2": "turşu",
-        "mode_3_word_kelime_3": "salata"
-    },
-    "2027-02-28": {
-        "mode_1_word_kelime_1": "çorba",
-        "mode_3_word_kelime_1": "pilav",
-        "mode_3_word_kelime_2": "makarna",
-        "mode_3_word_kelime_3": "et"
-    },
-    "2027-03-01": {
-        "mode_1_word_kelime_1": "bahar",
-        "mode_3_word_kelime_1": "güneş",
-        "mode_3_word_kelime_2": "yeşil",
-        "mode_3_word_kelime_3": "doğa"
-    },
-    "2027-03-02": {
-        "mode_1_word_kelime_1": "fidan",
-        "mode_3_word_kelime_1": "yaprak",
-        "mode_3_word_kelime_2": "çiçek",
-        "mode_3_word_kelime_3": "tohum"
-    },
-    "2027-03-03": {
-        "mode_1_word_kelime_1": "yağmur",
-        "mode_3_word_kelime_1": "bulut",
-        "mode_3_word_kelime_2": "şimşek",
-        "mode_3_word_kelime_3": "rüzgar"
-    },
-    "2027-03-04": {
-        "mode_1_word_kelime_1": "nehir",
-        "mode_3_word_kelime_1": "dere",
-        "mode_3_word_kelime_2": "göl",
-        "mode_3_word_kelime_3": "akarsu"
-    },
-    "2027-03-05": {
-        "mode_1_word_kelime_1": "orman",
-        "mode_3_word_kelime_1": "ağaç",
-        "mode_3_word_kelime_2": "koru",
-        "mode_3_word_kelime_3": "çalı"
-    },
-    "2027-03-06": {
-        "mode_1_word_kelime_1": "kuş",
-        "mode_3_word_kelime_1": "leylek",
-        "mode_3_word_kelime_2": "kırlangıç",
-        "mode_3_word_kelime_3": "serçe"
-    },
-    "2027-03-07": {
-        "mode_1_word_kelime_1": "arı",
-        "mode_3_word_kelime_1": "petek",
-        "mode_3_word_kelime_2": "bal",
-        "mode_3_word_kelime_3": "çiçek"
-    },
-    "2027-03-08": {
-        "mode_1_word_kelime_1": "kelebek",
-        "mode_3_word_kelime_1": "tırtıl",
-        "mode_3_word_kelime_2": "renkli",
-        "mode_3_word_kelime_3": "kanat"
-    },
-    "2027-03-09": {
-        "mode_1_word_kelime_1": "karınca",
-        "mode_3_word_kelime_1": "yuva",
-        "mode_3_word_kelime_2": "toprak",
-        "mode_3_word_kelime_3": "emek"
-    },
-    "2027-03-10": {
-        "mode_1_word_kelime_1": "güneş",
-        "mode_3_word_kelime_1": "ışık",
-        "mode_3_word_kelime_2": "sıcak",
-        "mode_3_word_kelime_3": "gündüz"
-    },
-    "2027-03-11": {
-        "mode_1_word_kelime_1": "gece",
-        "mode_3_word_kelime_1": "yıldız",
-        "mode_3_word_kelime_2": "dolunay",
-        "mode_3_word_kelime_3": "karanlık"
-    },
-    "2027-03-12": {
-        "mode_1_word_kelime_1": "uyku",
-        "mode_3_word_kelime_1": "rüya",
-        "mode_3_word_kelime_2": "masal",
-        "mode_3_word_kelime_3": "yatak"
-    },
-    "2027-03-13": {
-        "mode_1_word_kelime_1": "sabah",
-        "mode_3_word_kelime_1": "kahvaltı",
-        "mode_3_word_kelime_2": "şafak",
-        "mode_3_word_kelime_3": "güneş"
-    },
-    "2027-03-14": {
-        "mode_1_word_kelime_1": "akşam",
-        "mode_3_word_kelime_1": "yemek",
-        "mode_3_word_kelime_2": "huzur",
-        "mode_3_word_kelime_3": "sessizlik"
-    },
-    "2027-03-15": {
-        "mode_1_word_kelime_1": "hafta",
-        "mode_3_word_kelime_1": "pazar",
-        "mode_3_word_kelime_2": "tatil",
-        "mode_3_word_kelime_3": "dinlenme"
-    },
-    "2027-03-16": {
-        "mode_1_word_kelime_1": "mevsim",
-        "mode_3_word_kelime_1": "yaz",
-        "mode_3_word_kelime_2": "sonbahar",
-        "mode_3_word_kelime_3": "kış"
-    },
-    "2027-03-17": {
-        "mode_1_word_kelime_1": "takvim",
-        "mode_3_word_kelime_1": "tarih",
-        "mode_3_word_kelime_2": "yılbaşı",
-        "mode_3_word_kelime_3": "zaman"
-    },
-    "2027-03-18": {
-        "mode_1_word_kelime_1": "doğum",
-        "mode_3_word_kelime_1": "yaş",
-        "mode_3_word_kelime_2": "parti",
-        "mode_3_word_kelime_3": "hediye"
-    },
-    "2027-03-19": {
-        "mode_1_word_kelime_1": "düğün",
-        "mode_3_word_kelime_1": "halay",
-        "mode_3_word_kelime_2": "müzik",
-        "mode_3_word_kelime_3": "eğlence"
-    },
-    "2027-03-20": {
-        "mode_1_word_kelime_1": "oyun",
-        "mode_3_word_kelime_1": "oyuncak",
-        "mode_3_word_kelime_2": "park",
-        "mode_3_word_kelime_3": "salıncak"
-    },
-    "2027-03-21": {
-        "mode_1_word_kelime_1": "top",
-        "mode_3_word_kelime_1": "kale",
-        "mode_3_word_kelime_2": "saha",
-        "mode_3_word_kelime_3": "takım"
-    },
-    "2027-03-22": {
-        "mode_1_word_kelime_1": "koşu",
-        "mode_3_word_kelime_1": "yürüyüş",
-        "mode_3_word_kelime_2": "spor",
-        "mode_3_word_kelime_3": "sağlık"
-    },
-    "2027-03-23": {
-        "mode_1_word_kelime_1": "yüzme",
-        "mode_3_word_kelime_1": "havuz",
-        "mode_3_word_kelime_2": "plaj",
-        "mode_3_word_kelime_3": "güneş"
-    },
-    "2027-03-24": {
-        "mode_1_word_kelime_1": "bisiklet",
-        "mode_3_word_kelime_1": "pedal",
-        "mode_3_word_kelime_2": "kask",
-        "mode_3_word_kelime_3": "yolcu"
-    },
-    "2027-03-25": {
-        "mode_1_word_kelime_1": "satranç",
-        "mode_3_word_kelime_1": "tahta",
-        "mode_3_word_kelime_2": "kale",
-        "mode_3_word_kelime_3": "piyon"
-    },
-    "2027-03-26": {
-        "mode_1_word_kelime_1": "kartal",
-        "mode_3_word_kelime_1": "şahin",
-        "mode_3_word_kelime_2": "doğan",
-        "mode_3_word_kelime_3": "akbaba"
-    },
-    "2027-03-27": {
-        "mode_1_word_kelime_1": "balık",
-        "mode_3_word_kelime_1": "yunus",
-        "mode_3_word_kelime_2": "balina",
-        "mode_3_word_kelime_3": "köpekbalığı"
-    },
-    "2027-03-28": {
-        "mode_1_word_kelime_1": "kaplumbağa",
-        "mode_3_word_kelime_1": "tavşan",
-        "mode_3_word_kelime_2": "masal",
-        "mode_3_word_kelime_3": "yarış"
-    },
-    "2027-03-29": {
-        "mode_1_word_kelime_1": "tilki",
-        "mode_3_word_kelime_1": "kurt",
-        "mode_3_word_kelime_2": "ayı",
-        "mode_3_word_kelime_3": "geyik"
-    },
-    "2027-03-30": {
-        "mode_1_word_kelime_1": "at",
-        "mode_3_word_kelime_1": "eyer",
-        "mode_3_word_kelime_2": "çiftlik",
-        "mode_3_word_kelime_3": "jokey"
-    },
-    "2027-03-31": {
-        "mode_1_word_kelime_1": "deve",
-        "mode_3_word_kelime_1": "çöl",
-        "mode_3_word_kelime_2": "vaha",
-        "mode_3_word_kelime_3": "kum"
-    },
-    "2027-04-01": {
-        "mode_1_word_kelime_1": "bayrak",
-        "mode_3_word_kelime_1": "millet",
-        "mode_3_word_kelime_2": "vatan",
-        "mode_3_word_kelime_3": "özgürlük"
-    },
-    "2027-04-02": {
-        "mode_1_word_kelime_1": "okul",
-        "mode_3_word_kelime_1": "tören",
-        "mode_3_word_kelime_2": "şiir",
-        "mode_3_word_kelime_3": "coşku"
-    },
-    "2027-04-03": {
-        "mode_1_word_kelime_1": "çocuk",
-        "mode_3_word_kelime_1": "gülüş",
-        "mode_3_word_kelime_2": "sevinç",
-        "mode_3_word_kelime_3": "oyun"
-    },
-    "2027-04-04": {
-        "mode_1_word_kelime_1": "kitap",
-        "mode_3_word_kelime_1": "kütüphane",
-        "mode_3_word_kelime_2": "raf",
-        "mode_3_word_kelime_3": "okuma"
-    },
-    "2027-04-05": {
-        "mode_1_word_kelime_1": "defter",
-        "mode_3_word_kelime_1": "sayfa",
-        "mode_3_word_kelime_2": "not",
-        "mode_3_word_kelime_3": "kalem"
-    },
-    "2027-04-06": {
-        "mode_1_word_kelime_1": "sıra",
-        "mode_3_word_kelime_1": "tahta",
-        "mode_3_word_kelime_2": "tebeşir",
-        "mode_3_word_kelime_3": "silgi"
-    },
-    "2027-04-07": {
-        "mode_1_word_kelime_1": "sınav",
-        "mode_3_word_kelime_1": "soru",
-        "mode_3_word_kelime_2": "cevap",
-        "mode_3_word_kelime_3": "başarı"
-    },
-    "2027-04-08": {
-        "mode_1_word_kelime_1": "diploma",
-        "mode_3_word_kelime_1": "mezun",
-        "mode_3_word_kelime_2": "kepçe",
-        "mode_3_word_kelime_3": "tören"
-    },
-    "2027-04-09": {
-        "mode_1_word_kelime_1": "bilim",
-        "mode_3_word_kelime_1": "deney",
-        "mode_3_word_kelime_2": "laboratuvar",
-        "mode_3_word_kelime_3": "teori"
-    },
-    "2027-04-10": {
-        "mode_1_word_kelime_1": "uzay",
-        "mode_3_word_kelime_1": "roket",
-        "mode_3_word_kelime_2": "mekik",
-        "mode_3_word_kelime_3": "astronot"
-    },
-    "2027-04-11": {
-        "mode_1_word_kelime_1": "fizik",
-        "mode_3_word_kelime_1": "kimya",
-        "mode_3_word_kelime_2": "biyoloji",
-        "mode_3_word_kelime_3": "matematik"
-    },
-    "2027-04-12": {
-        "mode_1_word_kelime_1": "hesap",
-        "mode_3_word_kelime_1": "sayı",
-        "mode_3_word_kelime_2": "toplam",
-        "mode_3_word_kelime_3": "oran"
-    },
-    "2027-04-13": {
-        "mode_1_word_kelime_1": "geometri",
-        "mode_3_word_kelime_1": "açı",
-        "mode_3_word_kelime_2": "üçgen",
-        "mode_3_word_kelime_3": "kare"
-    },
-    "2027-04-14": {
-        "mode_1_word_kelime_1": "harita",
-        "mode_3_word_kelime_1": "pusula",
-        "mode_3_word_kelime_2": "yön",
-        "mode_3_word_kelime_3": "kutup"
-    },
-    "2027-04-15": {
-        "mode_1_word_kelime_1": "küre",
-        "mode_3_word_kelime_1": "atlas",
-        "mode_3_word_kelime_2": "kıta",
-        "mode_3_word_kelime_3": "okyanus"
-    },
-    "2027-04-16": {
-        "mode_1_word_kelime_1": "müze",
-        "mode_3_word_kelime_1": "tarih",
-        "mode_3_word_kelime_2": "heykel",
-        "mode_3_word_kelime_3": "kalıntı"
-    },
-    "2027-04-17": {
-        "mode_1_word_kelime_1": "kale",
-        "mode_3_word_kelime_1": "sur",
-        "mode_3_word_kelime_2": "kule",
-        "mode_3_word_kelime_3": "hendek"
-    },
-    "2027-04-18": {
-        "mode_1_word_kelime_1": "saray",
-        "mode_3_word_kelime_1": "sultan",
-        "mode_3_word_kelime_2": "krallık",
-        "mode_3_word_kelime_3": "taç"
-    },
-    "2027-04-19": {
-        "mode_1_word_kelime_1": "kılıç",
-        "mode_3_word_kelime_1": "kalkan",
-        "mode_3_word_kelime_2": "zırh",
-        "mode_3_word_kelime_3": "okçu"
-    },
-    "2027-04-20": {
-        "mode_1_word_kelime_1": "savaş",
-        "mode_3_word_kelime_1": "barış",
-        "mode_3_word_kelime_2": "zafer",
-        "mode_3_word_kelime_3": "ordu"
-    },
-    "2027-04-21": {
-        "mode_1_word_kelime_1": "heykel",
-        "mode_3_word_kelime_1": "ressam",
-        "mode_3_word_kelime_2": "mimar",
-        "mode_3_word_kelime_3": "eser"
-    },
-    "2027-04-22": {
-        "mode_1_word_kelime_1": "müzik",
-        "mode_3_word_kelime_1": "şarkı",
-        "mode_3_word_kelime_2": "melodi",
-        "mode_3_word_kelime_3": "ritim"
-    },
-    "2027-04-23": {
-        "mode_1_word_kelime_1": "gitar",
-        "mode_3_word_kelime_1": "keman",
-        "mode_3_word_kelime_2": "piyano",
-        "mode_3_word_kelime_3": "flüt"
-    },
-    "2027-04-24": {
-        "mode_1_word_kelime_1": "davul",
-        "mode_3_word_kelime_1": "zurna",
-        "mode_3_word_kelime_2": "org",
-        "mode_3_word_kelime_3": "bağlama"
-    },
-    "2027-04-25": {
-        "mode_1_word_kelime_1": "tiyatro",
-        "mode_3_word_kelime_1": "sahne",
-        "mode_3_word_kelime_2": "perde",
-        "mode_3_word_kelime_3": "oyuncu"
-    },
-    "2027-04-26": {
-        "mode_1_word_kelime_1": "sinema",
-        "mode_3_word_kelime_1": "film",
-        "mode_3_word_kelime_2": "kamera",
-        "mode_3_word_kelime_3": "perde"
-    },
-    "2027-04-27": {
-        "mode_1_word_kelime_1": "dans",
-        "mode_3_word_kelime_1": "bale",
-        "mode_3_word_kelime_2": "vals",
-        "mode_3_word_kelime_3": "figür"
-    },
-    "2027-04-28": {
-        "mode_1_word_kelime_1": "mimar",
-        "mode_3_word_kelime_1": "proje",
-        "mode_3_word_kelime_2": "çizim",
-        "mode_3_word_kelime_3": "bina"
-    },
-    "2027-04-29": {
-        "mode_1_word_kelime_1": "mühendis",
-        "mode_3_word_kelime_1": "sistem",
-        "mode_3_word_kelime_2": "köprü",
-        "mode_3_word_kelime_3": "yolcu"
-    },
-    "2027-04-30": {
-        "mode_1_word_kelime_1": "doktor",
-        "mode_3_word_kelime_1": "hasta",
-        "mode_3_word_kelime_2": "teşhis",
-        "mode_3_word_kelime_3": "tedavi"
-    },
-    "2027-05-01": {
-        "mode_1_word_kelime_1": "hemşire",
-        "mode_3_word_kelime_1": "iğne",
-        "mode_3_word_kelime_2": "ilaç",
-        "mode_3_word_kelime_3": "reçete"
-    },
-    "2027-05-02": {
-        "mode_1_word_kelime_1": "eczane",
-        "mode_3_word_kelime_1": "hap",
-        "mode_3_word_kelime_2": "şurup",
-        "mode_3_word_kelime_3": "sargı"
-    },
-    "2027-05-03": {
-        "mode_1_word_kelime_1": "hastane",
-        "mode_3_word_kelime_1": "oda",
-        "mode_3_word_kelime_2": "sedye",
-        "mode_3_word_kelime_3": "ambulans"
-    },
-    "2027-05-04": {
-        "mode_1_word_kelime_1": "sağlık",
-        "mode_3_word_kelime_1": "virüs",
-        "mode_3_word_kelime_2": "bakteri",
-        "mode_3_word_kelime_3": "bağışıklık"
-    },
-    "2027-05-05": {
-        "mode_1_word_kelime_1": "sporcu",
-        "mode_3_word_kelime_1": "stadyum",
-        "mode_3_word_kelime_2": "tribün",
-        "mode_3_word_kelime_3": "taraftar"
-    },
-    "2027-05-06": {
-        "mode_1_word_kelime_1": "hakem",
-        "mode_3_word_kelime_1": "düdük",
-        "mode_3_word_kelime_2": "kart",
-        "mode_3_word_kelime_3": "faul"
-    },
-    "2027-05-07": {
-        "mode_1_word_kelime_1": "madalya",
-        "mode_3_word_kelime_1": "kupa",
-        "mode_3_word_kelime_2": "kürsü",
-        "mode_3_word_kelime_3": "şampiyon"
-    },
-    "2027-05-08": {
-        "mode_1_word_kelime_1": "güreş",
-        "mode_3_word_kelime_1": "minder",
-        "mode_3_word_kelime_2": "boksör",
-        "mode_3_word_kelime_3": "ring"
-    },
-    "2027-05-09": {
-        "mode_1_word_kelime_1": "tenis",
-        "mode_3_word_kelime_1": "raket",
-        "mode_3_word_kelime_2": "file",
-        "mode_3_word_kelime_3": "kort"
-    },
-    "2027-05-10": {
-        "mode_1_word_kelime_1": "basketbol",
-        "mode_3_word_kelime_1": "pota",
-        "mode_3_word_kelime_2": "saha",
-        "mode_3_word_kelime_3": "smaç"
-    },
-    "2027-05-11": {
-        "mode_1_word_kelime_1": "voleybol",
-        "mode_3_word_kelime_1": "pasör",
-        "mode_3_word_kelime_2": "blok",
-        "mode_3_word_kelime_3": "servis"
-    },
-    "2027-05-12": {
-        "mode_1_word_kelime_1": "kayak",
-        "mode_3_word_kelime_1": "kar",
-        "mode_3_word_kelime_2": "dağcı",
-        "mode_3_word_kelime_3": "telesiyej"
-    },
-    "2027-05-13": {
-        "mode_1_word_kelime_1": "izci",
-        "mode_3_word_kelime_1": "çadır",
-        "mode_3_word_kelime_2": "tulum",
-        "mode_3_word_kelime_3": "fener"
-    },
-    "2027-05-14": {
-        "mode_1_word_kelime_1": "doğa",
-        "mode_3_word_kelime_1": "yürüyüş",
-        "mode_3_word_kelime_2": "mola",
-        "mode_3_word_kelime_3": "matara"
-    },
-    "2027-05-15": {
-        "mode_1_word_kelime_1": "yangın",
-        "mode_3_word_kelime_1": "itfaiye",
-        "mode_3_word_kelime_2": "hortum",
-        "mode_3_word_kelime_3": "siren"
-    },
-    "2027-05-16": {
-        "mode_1_word_kelime_1": "polis",
-        "mode_3_word_kelime_1": "devriye",
-        "mode_3_word_kelime_2": "telsiz",
-        "mode_3_word_kelime_3": "asayiş"
-    },
-    "2027-05-17": {
-        "mode_1_word_kelime_1": "asker",
-        "mode_3_word_kelime_1": "kışla",
-        "mode_3_word_kelime_2": "nöbet",
-        "mode_3_word_kelime_3": "üniforma"
-    },
-    "2027-05-18": {
-        "mode_1_word_kelime_1": "posta",
-        "mode_3_word_kelime_1": "mektup",
-        "mode_3_word_kelime_2": "zarfı",
-        "mode_3_word_kelime_3": "pul"
-    },
-    "2027-05-19": {
-        "mode_1_word_kelime_1": "kargo",
-        "mode_3_word_kelime_1": "paket",
-        "mode_3_word_kelime_2": "teslim",
-        "mode_3_word_kelime_3": "adres"
-    },
-    "2027-05-20": {
-        "mode_1_word_kelime_1": "mesaj",
-        "mode_3_word_kelime_1": "sohbet",
-        "mode_3_word_kelime_2": "telefon",
-        "mode_3_word_kelime_3": "bildirim"
-    },
-    "2027-05-21": {
-        "mode_1_word_kelime_1": "internet",
-        "mode_3_word_kelime_1": "ağ",
-        "mode_3_word_kelime_2": "site",
-        "mode_3_word_kelime_3": "sunucu"
-    },
-    "2027-05-22": {
-        "mode_1_word_kelime_1": "veri",
-        "mode_3_word_kelime_1": "ekran",
-        "mode_3_word_kelime_2": "klavye",
-        "mode_3_word_kelime_3": "fare"
-    },
-    "2027-05-23": {
-        "mode_1_word_kelime_1": "yazıcı",
-        "mode_3_word_kelime_1": "tarayıcı",
-        "mode_3_word_kelime_2": "kağıt",
-        "mode_3_word_kelime_3": "mürekkep"
-    },
-    "2027-05-24": {
-        "mode_1_word_kelime_1": "fotoğraf",
-        "mode_3_word_kelime_1": "flaş",
-        "mode_3_word_kelime_2": "lens",
-        "mode_3_word_kelime_3": "albüm"
-    },
-    "2027-05-25": {
-        "mode_1_word_kelime_1": "video",
-        "mode_3_word_kelime_1": "kurgu",
-        "mode_3_word_kelime_2": "ses",
-        "mode_3_word_kelime_3": "ışık"
-    },
-    "2027-05-26": {
-        "mode_1_word_kelime_1": "radyo",
-        "mode_3_word_kelime_1": "yayın",
-        "mode_3_word_kelime_2": "stüdyo",
-        "mode_3_word_kelime_3": "mikrofon"
-    },
-    "2027-05-27": {
-        "mode_1_word_kelime_1": "televizyon",
-        "mode_3_word_kelime_1": "kanal",
-        "mode_3_word_kelime_2": "dizi",
-        "mode_3_word_kelime_3": "reklam"
-    },
-    "2027-05-28": {
-        "mode_1_word_kelime_1": "gazete",
-        "mode_3_word_kelime_1": "manşet",
-        "mode_3_word_kelime_2": "yazar",
-        "mode_3_word_kelime_3": "baskı"
-    },
-    "2027-05-29": {
-        "mode_1_word_kelime_1": "dergi",
-        "mode_3_word_kelime_1": "kapak",
-        "mode_3_word_kelime_2": "makale",
-        "mode_3_word_kelime_3": "görsel"
-    },
-    "2027-05-30": {
-        "mode_1_word_kelime_1": "reklam",
-        "mode_3_word_kelime_1": "afiş",
-        "mode_3_word_kelime_2": "pano",
-        "mode_3_word_kelime_3": "marka"
-    },
-    "2027-05-31": {
-        "mode_1_word_kelime_1": "ticaret",
-        "mode_3_word_kelime_1": "pazar",
-        "mode_3_word_kelime_2": "müşteri",
-        "mode_3_word_kelime_3": "satış"
-    },
-    "2027-06-01": {
-        "mode_1_word_kelime_1": "yaz",
-        "mode_3_word_kelime_1": "sıcak",
-        "mode_3_word_kelime_2": "güneş",
-        "mode_3_word_kelime_3": "tatil"
-    },
-    "2027-06-02": {
-        "mode_1_word_kelime_1": "deniz",
-        "mode_3_word_kelime_1": "kumsal",
-        "mode_3_word_kelime_2": "şezlong",
-        "mode_3_word_kelime_3": "şemsiye"
-    },
-    "2027-06-03": {
-        "mode_1_word_kelime_1": "dondurma",
-        "mode_3_word_kelime_1": "külah",
-        "mode_3_word_kelime_2": "meyve",
-        "mode_3_word_kelime_3": "serinlik"
-    },
-    "2027-06-04": {
-        "mode_1_word_kelime_1": "karpuz",
-        "mode_3_word_kelime_1": "kavun",
-        "mode_3_word_kelime_2": "soğuk",
-        "mode_3_word_kelime_3": "dilim"
-    },
-    "2027-06-05": {
-        "mode_1_word_kelime_1": "piknik",
-        "mode_3_word_kelime_1": "mangal",
-        "mode_3_word_kelime_2": "ızgara",
-        "mode_3_word_kelime_3": "çimen"
-    },
-    "2027-06-06": {
-        "mode_1_word_kelime_1": "park",
-        "mode_3_word_kelime_1": "havuz",
-        "mode_3_word_kelime_2": "kaydırak",
-        "mode_3_word_kelime_3": "eğlence"
-    },
-    "2027-06-07": {
-        "mode_1_word_kelime_1": "yolculuk",
-        "mode_3_word_kelime_1": "otobüs",
-        "mode_3_word_kelime_2": "bilet",
-        "mode_3_word_kelime_3": "mola"
-    },
-    "2027-06-08": {
-        "mode_1_word_kelime_1": "otel",
-        "mode_3_word_kelime_1": "resepsiyon",
-        "mode_3_word_kelime_2": "anahtar",
-        "mode_3_word_kelime_3": "oda"
-    },
-    "2027-06-09": {
-        "mode_1_word_kelime_1": "bavul",
-        "mode_3_word_kelime_1": "giysi",
-        "mode_3_word_kelime_2": "gözlük",
-        "mode_3_word_kelime_3": "krem"
-    },
-    "2027-06-10": {
-        "mode_1_word_kelime_1": "iskele",
-        "mode_3_word_kelime_1": "gemi",
-        "mode_3_word_kelime_2": "vapur",
-        "mode_3_word_kelime_3": "simit"
-    },
-    "2027-06-11": {
-        "mode_1_word_kelime_1": "martı",
-        "mode_3_word_kelime_1": "deniz",
-        "mode_3_word_kelime_2": "rüzgar",
-        "mode_3_word_kelime_3": "dalga"
-    },
-    "2027-06-12": {
-        "mode_1_word_kelime_1": "balıkçı",
-        "mode_3_word_kelime_1": "ağ",
-        "mode_3_word_kelime_2": "tekne",
-        "mode_3_word_kelime_3": "koy"
-    },
-    "2027-06-13": {
-        "mode_1_word_kelime_1": "dalgıç",
-        "mode_3_word_kelime_1": "tüp",
-        "mode_3_word_kelime_2": "palet",
-        "mode_3_word_kelime_3": "mercan"
-    },
-    "2027-06-14": {
-        "mode_1_word_kelime_1": "ada",
-        "mode_3_word_kelime_1": "fener",
-        "mode_3_word_kelime_2": "sahil",
-        "mode_3_word_kelime_3": "kayalık"
-    },
-    "2027-06-15": {
-        "mode_1_word_kelime_1": "denizyıldızı",
-        "mode_3_word_kelime_1": "kabuk",
-        "mode_3_word_kelime_2": "kum",
-        "mode_3_word_kelime_3": "yosun"
-    },
-    "2027-06-16": {
-        "mode_1_word_kelime_1": "kanyon",
-        "mode_3_word_kelime_1": "şelale",
-        "mode_3_word_kelime_2": "vadi",
-        "mode_3_word_kelime_3": "akarsu"
-    },
-    "2027-06-17": {
-        "mode_1_word_kelime_1": "mağara",
-        "mode_3_word_kelime_1": "sarkıt",
-        "mode_3_word_kelime_2": "dikit",
-        "mode_3_word_kelime_3": "fener"
-    },
-    "2027-06-18": {
-        "mode_1_word_kelime_1": "ormancı",
-        "mode_3_word_kelime_1": "ağaç",
-        "mode_3_word_kelime_2": "yeşil",
-        "mode_3_word_kelime_3": "yaban"
-    },
-    "2027-06-19": {
-        "mode_1_word_kelime_1": "kamp",
-        "mode_3_word_kelime_1": "odun",
-        "mode_3_word_kelime_2": "duman",
-        "mode_3_word_kelime_3": "kıvılcım"
-    },
-    "2027-06-20": {
-        "mode_1_word_kelime_1": "gökyüzü",
-        "mode_3_word_kelime_1": "bulut",
-        "mode_3_word_kelime_2": "mavi",
-        "mode_3_word_kelime_3": "uçak"
-    },
-    "2027-06-21": {
-        "mode_1_word_kelime_1": "paraşüt",
-        "mode_3_word_kelime_1": "atlayış",
-        "mode_3_word_kelime_2": "rüzgar",
-        "mode_3_word_kelime_3": "cesaret"
-    },
-    "2027-06-22": {
-        "mode_1_word_kelime_1": "balon",
-        "mode_3_word_kelime_1": "kapadokya",
-        "mode_3_word_kelime_2": "peri",
-        "mode_3_word_kelime_3": "uçuş"
-    },
-    "2027-06-23": {
-        "mode_1_word_kelime_1": "gezgin",
-        "mode_3_word_kelime_1": "maceracı",
-        "mode_3_word_kelime_2": "rota",
-        "mode_3_word_kelime_3": "harita"
-    },
-    "2027-06-24": {
-        "mode_1_word_kelime_1": "fotoğrafçı",
-        "mode_3_word_kelime_1": "manzara",
-        "mode_3_word_kelime_2": "kadraj",
-        "mode_3_word_kelime_3": "odak"
-    },
-    "2027-06-25": {
-        "mode_1_word_kelime_1": "düğün",
-        "mode_3_word_kelime_1": "gelin",
-        "mode_3_word_kelime_2": "damat",
-        "mode_3_word_kelime_3": "yüzük"
-    },
-    "2027-06-26": {
-        "mode_1_word_kelime_1": "çiçekçi",
-        "mode_3_word_kelime_1": "gül",
-        "mode_3_word_kelime_2": "papatya",
-        "mode_3_word_kelime_3": "demet"
-    },
-    "2027-06-27": {
-        "mode_1_word_kelime_1": "müzik",
-        "mode_3_word_kelime_1": "orkestra",
-        "mode_3_word_kelime_2": "keman",
-        "mode_3_word_kelime_3": "sahne"
-    },
-    "2027-06-28": {
-        "mode_1_word_kelime_1": "ziyafet",
-        "mode_3_word_kelime_1": "garson",
-        "mode_3_word_kelime_2": "menü",
-        "mode_3_word_kelime_3": "sipariş"
-    },
-    "2027-06-29": {
-        "mode_1_word_kelime_1": "restoran",
-        "mode_3_word_kelime_1": "şef",
-        "mode_3_word_kelime_2": "lezzet",
-        "mode_3_word_kelime_3": "servis"
-    },
-    "2027-06-30": {
-        "mode_1_word_kelime_1": "lokanta",
-        "mode_3_word_kelime_1": "çorba",
-        "mode_3_word_kelime_2": "kebap",
-        "mode_3_word_kelime_3": "tatlı"
-    },
-    "2027-07-01": {
-        "mode_1_word_kelime_1": "güneş",
-        "mode_3_word_kelime_1": "kum",
-        "mode_3_word_kelime_2": "deniz",
-        "mode_3_word_kelime_3": "bronz"
-    },
-    "2027-07-02": {
-        "mode_1_word_kelime_1": "şapka",
-        "mode_3_word_kelime_1": "gözlük",
-        "mode_3_word_kelime_2": "havlu",
-        "mode_3_word_kelime_3": "terlik"
-    },
-    "2027-07-03": {
-        "mode_1_word_kelime_1": "limonata",
-        "mode_3_word_kelime_1": "buzlu",
-        "mode_3_word_kelime_2": "nane",
-        "mode_3_word_kelime_3": "ferahlık"
-    },
-    "2027-07-04": {
-        "mode_1_word_kelime_1": "meyve",
-        "mode_3_word_kelime_1": "şeftali",
-        "mode_3_word_kelime_2": "kayısı",
-        "mode_3_word_kelime_3": "kiraz"
-    },
-    "2027-07-05": {
-        "mode_1_word_kelime_1": "dondurma",
-        "mode_3_word_kelime_1": "vanilya",
-        "mode_3_word_kelime_2": "kakao",
-        "mode_3_word_kelime_3": "fıstık"
-    },
-    "2027-07-06": {
-        "mode_1_word_kelime_1": "palmiye",
-        "mode_3_word_kelime_1": "sahil",
-        "mode_3_word_kelime_2": "esinti",
-        "mode_3_word_kelime_3": "akşam"
-    },
-    "2027-07-07": {
-        "mode_1_word_kelime_1": "dalga",
-        "mode_3_word_kelime_1": "sörf",
-        "mode_3_word_kelime_2": "tahta",
-        "mode_3_word_kelime_3": "dengeli"
-    },
-    "2027-07-08": {
-        "mode_1_word_kelime_1": "yat",
-        "mode_3_word_kelime_1": "marina",
-        "mode_3_word_kelime_2": "dümen",
-        "mode_3_word_kelime_3": "kaptan"
-    },
-    "2027-07-09": {
-        "mode_1_word_kelime_1": "pusula",
-        "mode_3_word_kelime_1": "yön",
-        "mode_3_word_kelime_2": "harita",
-        "mode_3_word_kelime_3": "keşif"
-    },
-    "2027-07-10": {
-        "mode_1_word_kelime_1": "hazine",
-        "mode_3_word_kelime_1": "sandık",
-        "mode_3_word_kelime_2": "altın",
-        "mode_3_word_kelime_3": "harita"
-    },
-    "2027-07-11": {
-        "mode_1_word_kelime_1": "korsan",
-        "mode_3_word_kelime_1": "bayrak",
-        "mode_3_word_kelime_2": "gemi",
-        "mode_3_word_kelime_3": "top"
-    },
-    "2027-07-12": {
-        "mode_1_word_kelime_1": "denizanası",
-        "mode_3_word_kelime_1": "derinlik",
-        "mode_3_word_kelime_2": "mavi",
-        "mode_3_word_kelime_3": "yüzme"
-    },
-    "2027-07-13": {
-        "mode_1_word_kelime_1": "akvaryum",
-        "mode_3_word_kelime_1": "balık",
-        "mode_3_word_kelime_2": "cam",
-        "mode_3_word_kelime_3": "renkli"
-    },
-    "2027-07-14": {
-        "mode_1_word_kelime_1": "yazlık",
-        "mode_3_word_kelime_1": "balkon",
-        "mode_3_word_kelime_2": "hamak",
-        "mode_3_word_kelime_3": "huzur"
-    },
-    "2027-07-15": {
-        "mode_1_word_kelime_1": "müzik",
-        "mode_3_word_kelime_1": "konser",
-        "mode_3_word_kelime_2": "festival",
-        "mode_3_word_kelime_3": "bilet"
-    },
-    "2027-07-16": {
-        "mode_1_word_kelime_1": "sahne",
-        "mode_3_word_kelime_1": "ışık",
-        "mode_3_word_kelime_2": "hoparlör",
-        "mode_3_word_kelime_3": "coşku"
-    },
-    "2027-07-17": {
-        "mode_1_word_kelime_1": "dansçı",
-        "mode_3_word_kelime_1": "ritim",
-        "mode_3_word_kelime_2": "müzik",
-        "mode_3_word_kelime_3": "gösteri"
-    },
-    "2027-07-18": {
-        "mode_1_word_kelime_1": "lunapark",
-        "mode_3_word_kelime_1": "salıncak",
-        "mode_3_word_kelime_2": "tren",
-        "mode_3_word_kelime_3": "eğlence"
-    },
-    "2027-07-19": {
-        "mode_1_word_kelime_1": "pamuk",
-        "mode_3_word_kelime_1": "şeker",
-        "mode_3_word_kelime_2": "balon",
-        "mode_3_word_kelime_3": "çocuk"
-    },
-    "2027-07-20": {
-        "mode_1_word_kelime_1": "sirk",
-        "mode_3_word_kelime_1": "palyaço",
-        "mode_3_word_kelime_2": "gösteri",
-        "mode_3_word_kelime_3": "alkış"
-    },
-    "2027-07-21": {
-        "mode_1_word_kelime_1": "sihirbaz",
-        "mode_3_word_kelime_1": "şapka",
-        "mode_3_word_kelime_2": "tavşan",
-        "mode_3_word_kelime_3": "numara"
-    },
-    "2027-07-22": {
-        "mode_1_word_kelime_1": "oyuncu",
-        "mode_3_word_kelime_1": "senaryo",
-        "mode_3_word_kelime_2": "sahne",
-        "mode_3_word_kelime_3": "yönetmen"
-    },
-    "2027-07-23": {
-        "mode_1_word_kelime_1": "kamera",
-        "mode_3_word_kelime_1": "çekim",
-        "mode_3_word_kelime_2": "set",
-        "mode_3_word_kelime_3": "stüdyo"
-    },
-    "2027-07-24": {
-        "mode_1_word_kelime_1": "kurgu",
-        "mode_3_word_kelime_1": "montaj",
-        "mode_3_word_kelime_2": "ses",
-        "mode_3_word_kelime_3": "efekt"
-    },
-    "2027-07-25": {
-        "mode_1_word_kelime_1": "animasyon",
-        "mode_3_word_kelime_1": "çizim",
-        "mode_3_word_kelime_2": "karakter",
-        "mode_3_word_kelime_3": "renk"
-    },
-    "2027-07-26": {
-        "mode_1_word_kelime_1": "çizgi",
-        "mode_3_word_kelime_1": "roman",
-        "mode_3_word_kelime_2": "mizah",
-        "mode_3_word_kelime_3": "dergi"
-    },
-    "2027-07-27": {
-        "mode_1_word_kelime_1": "karikatür",
-        "mode_3_word_kelime_1": "çizim",
-        "mode_3_word_kelime_2": "esprili",
-        "mode_3_word_kelime_3": "mürekkep"
-    },
-    "2027-07-28": {
-        "mode_1_word_kelime_1": "mizaç",
-        "mode_3_word_kelime_1": "gülüş",
-        "mode_3_word_kelime_2": "kahkaha",
-        "mode_3_word_kelime_3": "şaka"
-    },
-    "2027-07-29": {
-        "mode_1_word_kelime_1": "fıkra",
-        "mode_3_word_kelime_1": "anlatı",
-        "mode_3_word_kelime_2": "komedi",
-        "mode_3_word_kelime_3": "tiyatro"
-    },
-    "2027-07-30": {
-        "mode_1_word_kelime_1": "maske",
-        "mode_3_word_kelime_1": "kostüm",
-        "mode_3_word_kelime_2": "parti",
-        "mode_3_word_kelime_3": "dans"
-    },
-    "2027-07-31": {
-        "mode_1_word_kelime_1": "festival",
-        "mode_3_word_kelime_1": "karnaval",
-        "mode_3_word_kelime_2": "müzik",
-        "mode_3_word_kelime_3": "geçit"
-    },
-    "2027-08-01": {
-        "mode_1_word_kelime_1": "sıcaklık",
-        "mode_3_word_kelime_1": "gölge",
-        "mode_3_word_kelime_2": "rüzgar",
-        "mode_3_word_kelime_3": "klima"
-    },
-    "2027-08-02": {
-        "mode_1_word_kelime_1": "su",
-        "mode_3_word_kelime_1": "sürahi",
-        "mode_3_word_kelime_2": "bardak",
-        "mode_3_word_kelime_3": "buzlu"
-    },
-    "2027-08-03": {
-        "mode_1_word_kelime_1": "karpuz",
-        "mode_3_word_kelime_1": "peynir",
-        "mode_3_word_kelime_2": "sofra",
-        "mode_3_word_kelime_3": "akşam"
-    },
-    "2027-08-04": {
-        "mode_1_word_kelime_1": "yıldız",
-        "mode_3_word_kelime_1": "meteor",
-        "mode_3_word_kelime_2": "gece",
-        "mode_3_word_kelime_3": "dilek"
-    },
-    "2027-08-05": {
-        "mode_1_word_kelime_1": "samanyolu",
-        "mode_3_word_kelime_1": "uzay",
-        "mode_3_word_kelime_2": "teleskop",
-        "mode_3_word_kelime_3": "gözlem"
-    },
-    "2027-08-06": {
-        "mode_1_word_kelime_1": "astronot",
-        "mode_3_word_kelime_1": "roket",
-        "mode_3_word_kelime_2": "yerçekimi",
-        "mode_3_word_kelime_3": "istasyon"
-    },
-    "2027-08-07": {
-        "mode_1_word_kelime_1": "uzaylı",
-        "mode_3_word_kelime_1": "gezegen",
-        "mode_3_word_kelime_2": "krater",
-        "mode_3_word_kelime_3": "galaksi"
-    },
-    "2027-08-08": {
-        "mode_1_word_kelime_1": "mimar",
-        "mode_3_word_kelime_1": "tasarım",
-        "mode_3_word_kelime_2": "çizim",
-        "mode_3_word_kelime_3": "maket"
-    },
-    "2027-08-09": {
-        "mode_1_word_kelime_1": "inşaat",
-        "mode_3_word_kelime_1": "vinç",
-        "mode_3_word_kelime_2": "iskele",
-        "mode_3_word_kelime_3": "beton"
-    },
-    "2027-08-10": {
-        "mode_1_word_kelime_1": "mühendis",
-        "mode_3_word_kelime_1": "köprü",
-        "mode_3_word_kelime_2": "tünel",
-        "mode_3_word_kelime_3": "otoban"
-    },
-    "2027-08-11": {
-        "mode_1_word_kelime_1": "yolcu",
-        "mode_3_word_kelime_1": "asfalt",
-        "mode_3_word_kelime_2": "viraj",
-        "mode_3_word_kelime_3": "tabela"
-    },
-    "2027-08-12": {
-        "mode_1_word_kelime_1": "trafik",
-        "mode_3_word_kelime_1": "lamba",
-        "mode_3_word_kelime_2": "araç",
-        "mode_3_word_kelime_3": "sürücü"
-    },
-    "2027-08-13": {
-        "mode_1_word_kelime_1": "otobüs",
-        "mode_3_word_kelime_1": "durak",
-        "mode_3_word_kelime_2": "yolcu",
-        "mode_3_word_kelime_3": "bilet"
-    },
-    "2027-08-14": {
-        "mode_1_word_kelime_1": "metro",
-        "mode_3_word_kelime_1": "istasyon",
-        "mode_3_word_kelime_2": "vagon",
-        "mode_3_word_kelime_3": "raylar"
-    },
-    "2027-08-15": {
-        "mode_1_word_kelime_1": "taksi",
-        "mode_3_word_kelime_1": "taksimetre",
-        "mode_3_word_kelime_2": "şoför",
-        "mode_3_word_kelime_3": "şehir"
-    },
-    "2027-08-16": {
-        "mode_1_word_kelime_1": "bisiklet",
-        "mode_3_word_kelime_1": "tekerlek",
-        "mode_3_word_kelime_2": "zincir",
-        "mode_3_word_kelime_3": "fren"
-    },
-    "2027-08-17": {
-        "mode_1_word_kelime_1": "motosiklet",
-        "mode_3_word_kelime_1": "kask",
-        "mode_3_word_kelime_2": "egzoz",
-        "mode_3_word_kelime_3": "hızlar"
-    },
-    "2027-08-18": {
-        "mode_1_word_kelime_1": "uçak",
-        "mode_3_word_kelime_1": "kanat",
-        "mode_3_word_kelime_2": "pilot",
-        "mode_3_word_kelime_3": "havalimanı"
-    },
-    "2027-08-19": {
-        "mode_1_word_kelime_1": "helikopter",
-        "mode_3_word_kelime_1": "pervane",
-        "mode_3_word_kelime_2": "pist",
-        "mode_3_word_kelime_3": "uçuş"
-    },
-    "2027-08-20": {
-        "mode_1_word_kelime_1": "zeplin",
-        "mode_3_word_kelime_1": "balon",
-        "mode_3_word_kelime_2": "gaz",
-        "mode_3_word_kelime_3": "gökyüzü"
-    },
-    "2027-08-21": {
-        "mode_1_word_kelime_1": "liman",
-        "mode_3_word_kelime_1": "vinç",
-        "mode_3_word_kelime_2": "konteyner",
-        "mode_3_word_kelime_3": "yük"
-    },
-    "2027-08-22": {
-        "mode_1_word_kelime_1": "gemi",
-        "mode_3_word_kelime_1": "güverte",
-        "mode_3_word_kelime_2": "baca",
-        "mode_3_word_kelime_3": "yakıt"
-    },
-    "2027-08-23": {
-        "mode_1_word_kelime_1": "sandal",
-        "mode_3_word_kelime_1": "rekreasyon",
-        "mode_3_word_kelime_2": "göl",
-        "mode_3_word_kelime_3": "ördek"
-    },
-    "2027-08-24": {
-        "mode_1_word_kelime_1": "kuğu",
-        "mode_3_word_kelime_1": "tüy",
-        "mode_3_word_kelime_2": "zarafet",
-        "mode_3_word_kelime_3": "su"
-    },
-    "2027-08-25": {
-        "mode_1_word_kelime_1": "nilüfer",
-        "mode_3_word_kelime_1": "yaprak",
-        "mode_3_word_kelime_2": "göl",
-        "mode_3_word_kelime_3": "pembe"
-    },
-    "2027-08-26": {
-        "mode_1_word_kelime_1": "sazlık",
-        "mode_3_word_kelime_1": "kamış",
-        "mode_3_word_kelime_2": "kuş",
-        "mode_3_word_kelime_3": "bataklık"
-    },
-    "2027-08-27": {
-        "mode_1_word_kelime_1": "orman",
-        "mode_3_word_kelime_1": "milli",
-        "mode_3_word_kelime_2": "park",
-        "mode_3_word_kelime_3": "koruma"
-    },
-    "2027-08-28": {
-        "mode_1_word_kelime_1": "izci",
-        "mode_3_word_kelime_1": "fular",
-        "mode_3_word_kelime_2": "çadır",
-        "mode_3_word_kelime_3": "düğüm"
-    },
-    "2027-08-29": {
-        "mode_1_word_kelime_1": "dağcılık",
-        "mode_3_word_kelime_1": "tırmanış",
-        "mode_3_word_kelime_2": "halat",
-        "mode_3_word_kelime_3": "kanca"
-    },
-    "2027-08-30": {
-        "mode_1_word_kelime_1": "mağaracılık",
-        "mode_3_word_kelime_1": "fener",
-        "mode_3_word_kelime_2": "kask",
-        "mode_3_word_kelime_3": "harita"
-    },
-    "2027-08-31": {
-        "mode_1_word_kelime_1": "zafer",
-        "mode_3_word_kelime_1": "bayrak",
-        "mode_3_word_kelime_2": "tören",
-        "mode_3_word_kelime_3": "millet"
-    },
-    "2027-09-01": {
-        "mode_1_word_kelime_1": "sonbahar",
-        "mode_3_word_kelime_1": "rüzgar",
-        "mode_3_word_kelime_2": "yaprak",
-        "mode_3_word_kelime_3": "sarı"
-    },
-    "2027-09-02": {
-        "mode_1_word_kelime_1": "okul",
-        "mode_3_word_kelime_1": "zil",
-        "mode_3_word_kelime_2": "önlük",
-        "mode_3_word_kelime_3": "çanta"
-    },
-    "2027-09-03": {
-        "mode_1_word_kelime_1": "öğretmen",
-        "mode_3_word_kelime_1": "ders",
-        "mode_3_word_kelime_2": "sınıf",
-        "mode_3_word_kelime_3": "sıra"
-    },
-    "2027-09-04": {
-        "mode_1_word_kelime_1": "öğrenci",
-        "mode_3_word_kelime_1": "defter",
-        "mode_3_word_kelime_2": "kitap",
-        "mode_3_word_kelime_3": "kalem"
-    },
-    "2027-09-05": {
-        "mode_1_word_kelime_1": "ödev",
-        "mode_3_word_kelime_1": "çalışma",
-        "mode_3_word_kelime_2": "proje",
-        "mode_3_word_kelime_3": "sunum"
-    },
-    "2027-09-06": {
-        "mode_1_word_kelime_1": "kütüphane",
-        "mode_3_word_kelime_1": "sessizlik",
-        "mode_3_word_kelime_2": "raf",
-        "mode_3_word_kelime_3": "araştırma"
-    },
-    "2027-09-07": {
-        "mode_1_word_kelime_1": "sözlük",
-        "mode_3_word_kelime_1": "kelime",
-        "mode_3_word_kelime_2": "anlam",
-        "mode_3_word_kelime_3": "dilim"
-    },
-    "2027-09-08": {
-        "mode_1_word_kelime_1": "ansiklopedi",
-        "mode_3_word_kelime_1": "bilgi",
-        "mode_3_word_kelime_2": "cilt",
-        "mode_3_word_kelime_3": "sayfa"
-    },
-    "2027-09-09": {
-        "mode_1_word_kelime_1": "kalem",
-        "mode_3_word_kelime_1": "silgi",
-        "mode_3_word_kelime_2": "cetvel",
-        "mode_3_word_kelime_3": "pergel"
-    },
-    "2027-09-10": {
-        "mode_1_word_kelime_1": "çanta",
-        "mode_3_word_kelime_1": "askı",
-        "mode_3_word_kelime_2": "matara",
-        "mode_3_word_kelime_3": "beslenme"
-    },
-    "2027-09-11": {
-        "mode_1_word_kelime_1": "zil",
-        "mode_3_word_kelime_1": "teneffüs",
-        "mode_3_word_kelime_2": "bahçe",
-        "mode_3_word_kelime_3": "oyun"
-    },
-    "2027-09-12": {
-        "mode_1_word_kelime_1": "kantin",
-        "mode_3_word_kelime_1": "tost",
-        "mode_3_word_kelime_2": "ayran",
-        "mode_3_word_kelime_3": "kuyruk"
-    },
-    "2027-09-13": {
-        "mode_1_word_kelime_1": "spor",
-        "mode_3_word_kelime_1": "salon",
-        "mode_3_word_kelime_2": "pota",
-        "mode_3_word_kelime_3": "voleybol"
-    },
-    "2027-09-14": {
-        "mode_1_word_kelime_1": "laboratuvar",
-        "mode_3_word_kelime_1": "önlük",
-        "mode_3_word_kelime_2": "tüp",
-        "mode_3_word_kelime_3": "deney"
-    },
-    "2027-09-15": {
-        "mode_1_word_kelime_1": "bilgisayar",
-        "mode_3_word_kelime_1": "yazılım",
-        "mode_3_word_kelime_2": "internet",
-        "mode_3_word_kelime_3": "kodlama"
-    },
-    "2027-09-16": {
-        "mode_1_word_kelime_1": "robot",
-        "mode_3_word_kelime_1": "sensör",
-        "mode_3_word_kelime_2": "yazılım",
-        "mode_3_word_kelime_3": "devre"
-    },
-    "2027-09-17": {
-        "mode_1_word_kelime_1": "elektronik",
-        "mode_3_word_kelime_1": "direnç",
-        "mode_3_word_kelime_2": "akım",
-        "mode_3_word_kelime_3": "voltaj"
-    },
-    "2027-09-18": {
-        "mode_1_word_kelime_1": "enerji",
-        "mode_3_word_kelime_1": "elektrik",
-        "mode_3_word_kelime_2": "üretim",
-        "mode_3_word_kelime_3": "şebeke"
-    },
-    "2027-09-19": {
-        "mode_1_word_kelime_1": "santral",
-        "mode_3_word_kelime_1": "baraj",
-        "mode_3_word_kelime_2": "türbin",
-        "mode_3_word_kelime_3": "su"
-    },
-    "2027-09-20": {
-        "mode_1_word_kelime_1": "güneş",
-        "mode_3_word_kelime_1": "panel",
-        "mode_3_word_kelime_2": "hücre",
-        "mode_3_word_kelime_3": "temiz"
-    },
-    "2027-09-21": {
-        "mode_1_word_kelime_1": "rüzgar",
-        "mode_3_word_kelime_1": "gül",
-        "mode_3_word_kelime_2": "pervane",
-        "mode_3_word_kelime_3": "tribün"
-    },
-    "2027-09-22": {
-        "mode_1_word_kelime_1": "doğal",
-        "mode_3_word_kelime_1": "gaz",
-        "mode_3_word_kelime_2": "boru",
-        "mode_3_word_kelime_3": "kombi"
-    },
-    "2027-09-23": {
-        "mode_1_word_kelime_1": "kömür",
-        "mode_3_word_kelime_1": "maden",
-        "mode_3_word_kelime_2": "ocak",
-        "mode_3_word_kelime_3": "işçi"
-    },
-    "2027-09-24": {
-        "mode_1_word_kelime_1": "petrol",
-        "mode_3_word_kelime_1": "rafineri",
-        "mode_3_word_kelime_2": "yakıt",
-        "mode_3_word_kelime_3": "benzin"
-    },
-    "2027-09-25": {
-        "mode_1_word_kelime_1": "plastik",
-        "mode_3_word_kelime_1": "dönüşüm",
-        "mode_3_word_kelime_2": "atık",
-        "mode_3_word_kelime_3": "çevre"
-    },
-    "2027-09-26": {
-        "mode_1_word_kelime_1": "köken",
-        "mode_3_word_kelime_1": "cam",
-        "mode_3_word_kelime_2": "kağıt",
-        "mode_3_word_kelime_3": "kutular"
-    },
-    "2027-09-27": {
-        "mode_1_word_kelime_1": "ağaç",
-        "mode_3_word_kelime_1": "fidan",
-        "mode_3_word_kelime_2": "orman",
-        "mode_3_word_kelime_3": "doğa"
-    },
-    "2027-09-28": {
-        "mode_1_word_kelime_1": "toprak",
-        "mode_3_word_kelime_1": "gübre",
-        "mode_3_word_kelime_2": "sulama",
-        "mode_3_word_kelime_3": "tarım"
-    },
-    "2027-09-29": {
-        "mode_1_word_kelime_1": "çiftçi",
-        "mode_3_word_kelime_1": "tarla",
-        "mode_3_word_kelime_2": "traktör",
-        "mode_3_word_kelime_3": "ekim"
-    },
-    "2027-09-30": {
-        "mode_1_word_kelime_1": "buğday",
-        "mode_3_word_kelime_1": "başak",
-        "mode_3_word_kelime_2": "değirmen",
-        "mode_3_word_kelime_3": "un"
-    },
-    "2027-10-01": {
-        "mode_1_word_kelime_1": "cumhuriyet",
-        "mode_3_word_kelime_1": "bayrak",
-        "mode_3_word_kelime_2": "özgürlük",
-        "mode_3_word_kelime_3": "tören"
-    },
-    "2027-10-02": {
-        "mode_1_word_kelime_1": "yağmur",
-        "mode_3_word_kelime_1": "şemsiye",
-        "mode_3_word_kelime_2": "yağmurluk",
-        "mode_3_word_kelime_3": "çizme"
-    },
-    "2027-10-03": {
-        "mode_1_word_kelime_1": "rüzgar",
-        "mode_3_word_kelime_1": "fırtına",
-        "mode_3_word_kelime_2": "yaprak",
-        "mode_3_word_kelime_3": "soğuk"
-    },
-    "2027-10-04": {
-        "mode_1_word_kelime_1": "sisli",
-        "mode_3_word_kelime_1": "bulut",
-        "mode_3_word_kelime_2": "gri",
-        "mode_3_word_kelime_3": "hava"
-    },
-    "2027-10-05": {
-        "mode_1_word_kelime_1": "kestane",
-        "mode_3_word_kelime_1": "fırın",
-        "mode_3_word_kelime_2": "soba",
-        "mode_3_word_kelime_3": "sıcak"
-    },
-    "2027-10-06": {
-        "mode_1_word_kelime_1": "merak",
-        "mode_3_word_kelime_1": "keşif",
-        "mode_3_word_kelime_2": "ipucu",
-        "mode_3_word_kelime_3": "bulmaca"
-    },
-    "2027-10-07": {
-        "mode_1_word_kelime_1": "pusula",
-        "mode_3_word_kelime_1": "yön",
-        "mode_3_word_kelime_2": "harita",
-        "mode_3_word_kelime_3": "rota"
-    },
-    "2027-10-08": {
-        "mode_1_word_kelime_1": "biber",
-        "mode_3_word_kelime_1": "domates",
-        "mode_3_word_kelime_2": "soğan",
-        "mode_3_word_kelime_3": "sarımsak"
-    },
-    "2027-10-09": {
-        "mode_1_word_kelime_1": "şafak",
-        "mode_3_word_kelime_1": "günbatımı",
-        "mode_3_word_kelime_2": "alacakaranlık",
-        "mode_3_word_kelime_3": "ufuk"
-    },
-    "2027-10-10": {
-        "mode_1_word_kelime_1": "tohum",
-        "mode_3_word_kelime_1": "filiz",
-        "mode_3_word_kelime_2": "kök",
-        "mode_3_word_kelime_3": "dal"
-    },
-    "2027-10-11": {
-        "mode_1_word_kelime_1": "defter",
-        "mode_3_word_kelime_1": "mürekkep",
-        "mode_3_word_kelime_2": "kalem",
-        "mode_3_word_kelime_3": "silgi"
-    },
-    "2027-10-12": {
-        "mode_1_word_kelime_1": "başlangıç",
-        "mode_3_word_kelime_1": "döngü",
-        "mode_3_word_kelime_2": "mevsim",
-        "mode_3_word_kelime_3": "takvim"
-    }
+  "2026-10-06": {
+    "mode_1_word_kelime_1": "limon",
+    "mode_3_word_kelime_1": "kas",
+    "mode_3_word_kelime_2": "bıçak",
+    "mode_3_word_kelime_3": "horoz"
+  },
+  "2026-10-07": {
+    "mode_1_word_kelime_1": "havlu",
+    "mode_3_word_kelime_1": "kiraz",
+    "mode_3_word_kelime_2": "ekmek",
+    "mode_3_word_kelime_3": "yuva"
+  },
+  "2026-10-08": {
+    "mode_1_word_kelime_1": "şemsiye",
+    "mode_3_word_kelime_1": "banyo",
+    "mode_3_word_kelime_2": "salon",
+    "mode_3_word_kelime_3": "süzgeç"
+  },
+  "2026-10-09": {
+    "mode_1_word_kelime_1": "çöl",
+    "mode_3_word_kelime_1": "dost",
+    "mode_3_word_kelime_2": "kavanoz",
+    "mode_3_word_kelime_3": "eldiven"
+  },
+  "2026-10-10": {
+    "mode_1_word_kelime_1": "elbise",
+    "mode_3_word_kelime_1": "ördek",
+    "mode_3_word_kelime_2": "salatalık",
+    "mode_3_word_kelime_3": "rüya"
+  },
+  "2026-10-11": {
+    "mode_1_word_kelime_1": "roman",
+    "mode_3_word_kelime_1": "nane",
+    "mode_3_word_kelime_2": "fidan",
+    "mode_3_word_kelime_3": "millet"
+  },
+  "2026-10-12": {
+    "mode_1_word_kelime_1": "zeytin",
+    "mode_3_word_kelime_1": "ayakkabı",
+    "mode_3_word_kelime_2": "ıspanak",
+    "mode_3_word_kelime_3": "ev"
+  },
+  "2026-10-13": {
+    "mode_1_word_kelime_1": "bal",
+    "mode_3_word_kelime_1": "kilit",
+    "mode_3_word_kelime_2": "tencere",
+    "mode_3_word_kelime_3": "kule"
+  },
+  "2026-10-14": {
+    "mode_1_word_kelime_1": "şehir",
+    "mode_3_word_kelime_1": "nohut",
+    "mode_3_word_kelime_2": "bacak",
+    "mode_3_word_kelime_3": "yıldız"
+  },
+  "2026-10-15": {
+    "mode_1_word_kelime_1": "masa",
+    "mode_3_word_kelime_1": "düğme",
+    "mode_3_word_kelime_2": "bahçe",
+    "mode_3_word_kelime_3": "kekik"
+  },
+  "2026-10-16": {
+    "mode_1_word_kelime_1": "lahana",
+    "mode_3_word_kelime_1": "saygı",
+    "mode_3_word_kelime_2": "mimar",
+    "mode_3_word_kelime_3": "başarı"
+  },
+  "2026-10-17": {
+    "mode_1_word_kelime_1": "dirsek",
+    "mode_3_word_kelime_1": "eczane",
+    "mode_3_word_kelime_2": "tarçın",
+    "mode_3_word_kelime_3": "soğuk"
+  },
+  "2026-10-18": {
+    "mode_1_word_kelime_1": "öğretmen",
+    "mode_3_word_kelime_1": "tava",
+    "mode_3_word_kelime_2": "yatak",
+    "mode_3_word_kelime_3": "perde"
+  },
+  "2026-10-19": {
+    "mode_1_word_kelime_1": "kazak",
+    "mode_3_word_kelime_1": "kaya",
+    "mode_3_word_kelime_2": "deprem",
+    "mode_3_word_kelime_3": "vişne"
+  },
+  "2026-10-20": {
+    "mode_1_word_kelime_1": "mutfak",
+    "mode_3_word_kelime_1": "çilek",
+    "mode_3_word_kelime_2": "şeftali",
+    "mode_3_word_kelime_3": "bilek"
+  },
+  "2026-10-21": {
+    "mode_1_word_kelime_1": "kavun",
+    "mode_3_word_kelime_1": "hırka",
+    "mode_3_word_kelime_2": "volkan",
+    "mode_3_word_kelime_3": "savaş"
+  },
+  "2026-10-22": {
+    "mode_1_word_kelime_1": "güneş",
+    "mode_3_word_kelime_1": "korku",
+    "mode_3_word_kelime_2": "gölge",
+    "mode_3_word_kelime_3": "kardeş"
+  },
+  "2026-10-23": {
+    "mode_1_word_kelime_1": "deve",
+    "mode_3_word_kelime_1": "mühendis",
+    "mode_3_word_kelime_2": "toprak",
+    "mode_3_word_kelime_3": "bina"
+  },
+  "2026-10-24": {
+    "mode_1_word_kelime_1": "ayna",
+    "mode_3_word_kelime_1": "sevgi",
+    "mode_3_word_kelime_2": "fil",
+    "mode_3_word_kelime_3": "doktor"
+  },
+  "2026-10-25": {
+    "mode_1_word_kelime_1": "düşünce",
+    "mode_3_word_kelime_1": "kemik",
+    "mode_3_word_kelime_2": "enginar",
+    "mode_3_word_kelime_3": "buğday"
+  },
+  "2026-10-26": {
+    "mode_1_word_kelime_1": "çorba",
+    "mode_3_word_kelime_1": "pirinç",
+    "mode_3_word_kelime_2": "enerji",
+    "mode_3_word_kelime_3": "iğne"
+  },
+  "2026-10-27": {
+    "mode_1_word_kelime_1": "badem",
+    "mode_3_word_kelime_1": "gökyüzü",
+    "mode_3_word_kelime_2": "fırça",
+    "mode_3_word_kelime_3": "kafes"
+  },
+  "2026-10-28": {
+    "mode_1_word_kelime_1": "portakal",
+    "mode_3_word_kelime_1": "vazo",
+    "mode_3_word_kelime_2": "mandalina",
+    "mode_3_word_kelime_3": "sabun"
+  },
+  "2026-10-29": {
+    "mode_1_word_kelime_1": "salata",
+    "mode_3_word_kelime_1": "şapka",
+    "mode_3_word_kelime_2": "kovan",
+    "mode_3_word_kelime_3": "havuç"
+  },
+  "2026-10-30": {
+    "mode_1_word_kelime_1": "çocuk",
+    "mode_3_word_kelime_1": "erkek",
+    "mode_3_word_kelime_2": "tren",
+    "mode_3_word_kelime_3": "biber"
+  },
+  "2026-10-31": {
+    "mode_1_word_kelime_1": "zafer",
+    "mode_3_word_kelime_1": "saat",
+    "mode_3_word_kelime_2": "polis",
+    "mode_3_word_kelime_3": "et"
+  },
+  "2026-11-01": {
+    "mode_1_word_kelime_1": "balık",
+    "mode_3_word_kelime_1": "maymun",
+    "mode_3_word_kelime_2": "etek",
+    "mode_3_word_kelime_3": "fırın"
+  },
+  "2026-11-02": {
+    "mode_1_word_kelime_1": "gurur",
+    "mode_3_word_kelime_1": "mont",
+    "mode_3_word_kelime_2": "sürahi",
+    "mode_3_word_kelime_3": "köy"
+  },
+  "2026-11-03": {
+    "mode_1_word_kelime_1": "kuğu",
+    "mode_3_word_kelime_1": "fabrika",
+    "mode_3_word_kelime_2": "şelale",
+    "mode_3_word_kelime_3": "hücre"
+  },
+  "2026-11-04": {
+    "mode_1_word_kelime_1": "kutu",
+    "mode_3_word_kelime_1": "kum",
+    "mode_3_word_kelime_2": "sebze",
+    "mode_3_word_kelime_3": "maydanoz"
+  },
+  "2026-11-05": {
+    "mode_1_word_kelime_1": "yaprak",
+    "mode_3_word_kelime_1": "lokanta",
+    "mode_3_word_kelime_2": "göz",
+    "mode_3_word_kelime_3": "helikopter"
+  },
+  "2026-11-06": {
+    "mode_1_word_kelime_1": "pencere",
+    "mode_3_word_kelime_1": "özgürlük",
+    "mode_3_word_kelime_2": "akıntı",
+    "mode_3_word_kelime_3": "motosiklet"
+  },
+  "2026-11-07": {
+    "mode_1_word_kelime_1": "elma",
+    "mode_3_word_kelime_1": "tabak",
+    "mode_3_word_kelime_2": "yoğurt",
+    "mode_3_word_kelime_3": "fikir"
+  },
+  "2026-11-08": {
+    "mode_1_word_kelime_1": "dolap",
+    "mode_3_word_kelime_1": "sahil",
+    "mode_3_word_kelime_2": "boyun",
+    "mode_3_word_kelime_3": "saç"
+  },
+  "2026-11-09": {
+    "mode_1_word_kelime_1": "araba",
+    "mode_3_word_kelime_1": "fırtına",
+    "mode_3_word_kelime_2": "ahtapot",
+    "mode_3_word_kelime_3": "baharat"
+  },
+  "2026-11-10": {
+    "mode_1_word_kelime_1": "usta",
+    "mode_3_word_kelime_1": "çatal",
+    "mode_3_word_kelime_2": "kaplan",
+    "mode_3_word_kelime_3": "penguen"
+  },
+  "2026-11-11": {
+    "mode_1_word_kelime_1": "roket",
+    "mode_3_word_kelime_1": "cami",
+    "mode_3_word_kelime_2": "diz",
+    "mode_3_word_kelime_3": "domates"
+  },
+  "2026-11-12": {
+    "mode_1_word_kelime_1": "mercimek",
+    "mode_3_word_kelime_1": "sırt",
+    "mode_3_word_kelime_2": "sonbahar",
+    "mode_3_word_kelime_3": "kabak"
+  },
+  "2026-11-13": {
+    "mode_1_word_kelime_1": "ağaç",
+    "mode_3_word_kelime_1": "anne",
+    "mode_3_word_kelime_2": "ses",
+    "mode_3_word_kelime_3": "zeka"
+  },
+  "2026-11-14": {
+    "mode_1_word_kelime_1": "balina",
+    "mode_3_word_kelime_1": "bisiklet",
+    "mode_3_word_kelime_2": "müzik",
+    "mode_3_word_kelime_3": "dağ"
+  },
+  "2026-11-15": {
+    "mode_1_word_kelime_1": "sakal",
+    "mode_3_word_kelime_1": "süt",
+    "mode_3_word_kelime_2": "çamur",
+    "mode_3_word_kelime_3": "muz"
+  },
+  "2026-11-16": {
+    "mode_1_word_kelime_1": "atkı",
+    "mode_3_word_kelime_1": "eğlence",
+    "mode_3_word_kelime_2": "istasyon",
+    "mode_3_word_kelime_3": "cadde"
+  },
+  "2026-11-17": {
+    "mode_1_word_kelime_1": "pilot",
+    "mode_3_word_kelime_1": "halı",
+    "mode_3_word_kelime_2": "tilki",
+    "mode_3_word_kelime_3": "karınca"
+  },
+  "2026-11-18": {
+    "mode_1_word_kelime_1": "meyve",
+    "mode_3_word_kelime_1": "gömlek",
+    "mode_3_word_kelime_2": "yorgan",
+    "mode_3_word_kelime_3": "liman"
+  },
+  "2026-11-19": {
+    "mode_1_word_kelime_1": "pırasa",
+    "mode_3_word_kelime_1": "mendil",
+    "mode_3_word_kelime_2": "erik",
+    "mode_3_word_kelime_3": "hastane"
+  },
+  "2026-11-20": {
+    "mode_1_word_kelime_1": "palto",
+    "mode_3_word_kelime_1": "okul",
+    "mode_3_word_kelime_2": "gemi",
+    "mode_3_word_kelime_3": "kaptan"
+  },
+  "2026-11-21": {
+    "mode_1_word_kelime_1": "üzüm",
+    "mode_3_word_kelime_1": "hüzün",
+    "mode_3_word_kelime_2": "orman",
+    "mode_3_word_kelime_3": "uçak"
+  },
+  "2026-11-22": {
+    "mode_1_word_kelime_1": "kaşık",
+    "mode_3_word_kelime_1": "ayak",
+    "mode_3_word_kelime_2": "uzay",
+    "mode_3_word_kelime_3": "su"
+  },
+  "2026-11-23": {
+    "mode_1_word_kelime_1": "kapı",
+    "mode_3_word_kelime_1": "müze",
+    "mode_3_word_kelime_2": "inek",
+    "mode_3_word_kelime_3": "sokak"
+  },
+  "2026-11-24": {
+    "mode_1_word_kelime_1": "keçi",
+    "mode_3_word_kelime_1": "dere",
+    "mode_3_word_kelime_2": "tuz",
+    "mode_3_word_kelime_3": "otel"
+  },
+  "2026-11-25": {
+    "mode_1_word_kelime_1": "nehir",
+    "mode_3_word_kelime_1": "akrep",
+    "mode_3_word_kelime_2": "ip",
+    "mode_3_word_kelime_3": "karpuz"
+  },
+  "2026-11-26": {
+    "mode_1_word_kelime_1": "mevsim",
+    "mode_3_word_kelime_1": "pilav",
+    "mode_3_word_kelime_2": "vadi",
+    "mode_3_word_kelime_3": "hız"
+  },
+  "2026-11-27": {
+    "mode_1_word_kelime_1": "neşe",
+    "mode_3_word_kelime_1": "zürafa",
+    "mode_3_word_kelime_2": "tekne",
+    "mode_3_word_kelime_3": "kedi"
+  },
+  "2026-11-28": {
+    "mode_1_word_kelime_1": "şimşek",
+    "mode_3_word_kelime_1": "oyun",
+    "mode_3_word_kelime_2": "burun",
+    "mode_3_word_kelime_3": "telefon"
+  },
+  "2026-11-29": {
+    "mode_1_word_kelime_1": "güvercin",
+    "mode_3_word_kelime_1": "kalem",
+    "mode_3_word_kelime_2": "pantolon",
+    "mode_3_word_kelime_3": "cezve"
+  },
+  "2026-11-30": {
+    "mode_1_word_kelime_1": "bıyık",
+    "mode_3_word_kelime_1": "topuk",
+    "mode_3_word_kelime_2": "fındık",
+    "mode_3_word_kelime_3": "ağız"
+  },
+  "2026-12-01": {
+    "mode_1_word_kelime_1": "tavuk",
+    "mode_3_word_kelime_1": "yumurta",
+    "mode_3_word_kelime_2": "duygu",
+    "mode_3_word_kelime_3": "sepet"
+  },
+  "2026-12-02": {
+    "mode_1_word_kelime_1": "kral",
+    "mode_3_word_kelime_1": "fasulye",
+    "mode_3_word_kelime_2": "kamyon",
+    "mode_3_word_kelime_3": "sabır"
+  },
+  "2026-12-03": {
+    "mode_1_word_kelime_1": "yangın",
+    "mode_3_word_kelime_1": "şair",
+    "mode_3_word_kelime_2": "çanta",
+    "mode_3_word_kelime_3": "uydu"
+  },
+  "2026-12-04": {
+    "mode_1_word_kelime_1": "terlik",
+    "mode_3_word_kelime_1": "patates",
+    "mode_3_word_kelime_2": "kahve",
+    "mode_3_word_kelime_3": "madde"
+  },
+  "2026-12-05": {
+    "mode_1_word_kelime_1": "anahtar",
+    "mode_3_word_kelime_1": "ceviz",
+    "mode_3_word_kelime_2": "deniz",
+    "mode_3_word_kelime_3": "sıcak"
+  },
+  "2026-12-06": {
+    "mode_1_word_kelime_1": "tohum",
+    "mode_3_word_kelime_1": "öğrenci",
+    "mode_3_word_kelime_2": "bilgi",
+    "mode_3_word_kelime_3": "sinek"
+  },
+  "2026-12-07": {
+    "mode_1_word_kelime_1": "sis",
+    "mode_3_word_kelime_1": "musluk",
+    "mode_3_word_kelime_2": "ışık",
+    "mode_3_word_kelime_3": "atom"
+  },
+  "2026-12-08": {
+    "mode_1_word_kelime_1": "göğüs",
+    "mode_3_word_kelime_1": "ressam",
+    "mode_3_word_kelime_2": "kulak",
+    "mode_3_word_kelime_3": "aslan"
+  },
+  "2026-12-09": {
+    "mode_1_word_kelime_1": "taş",
+    "mode_3_word_kelime_1": "ağırlık",
+    "mode_3_word_kelime_2": "baba",
+    "mode_3_word_kelime_3": "tiyatro"
+  },
+  "2026-12-10": {
+    "mode_1_word_kelime_1": "kertenkele",
+    "mode_3_word_kelime_1": "hikaye",
+    "mode_3_word_kelime_2": "sandal",
+    "mode_3_word_kelime_3": "köpek"
+  },
+  "2026-12-11": {
+    "mode_1_word_kelime_1": "şahin",
+    "mode_3_word_kelime_1": "ciğer",
+    "mode_3_word_kelime_2": "halk",
+    "mode_3_word_kelime_3": "baykuş"
+  },
+  "2026-12-12": {
+    "mode_1_word_kelime_1": "cesaret",
+    "mode_3_word_kelime_1": "şiir",
+    "mode_3_word_kelime_2": "fıstık",
+    "mode_3_word_kelime_3": "öfke"
+  },
+  "2026-12-13": {
+    "mode_1_word_kelime_1": "vapur",
+    "mode_3_word_kelime_1": "hasta",
+    "mode_3_word_kelime_2": "tepsi",
+    "mode_3_word_kelime_3": "kurbağa"
+  },
+  "2026-12-14": {
+    "mode_1_word_kelime_1": "köprü",
+    "mode_3_word_kelime_1": "kolye",
+    "mode_3_word_kelime_2": "sinema",
+    "mode_3_word_kelime_3": "cüzdan"
+  },
+  "2026-12-15": {
+    "mode_1_word_kelime_1": "yüzük",
+    "mode_3_word_kelime_1": "leylek",
+    "mode_3_word_kelime_2": "adalet",
+    "mode_3_word_kelime_3": "şeker"
+  },
+  "2026-12-16": {
+    "mode_1_word_kelime_1": "patlıcan",
+    "mode_3_word_kelime_1": "kravat",
+    "mode_3_word_kelime_2": "kurt",
+    "mode_3_word_kelime_3": "mağara"
+  },
+  "2026-12-17": {
+    "mode_1_word_kelime_1": "yılan",
+    "mode_3_word_kelime_1": "tepe",
+    "mode_3_word_kelime_2": "barış",
+    "mode_3_word_kelime_3": "ada"
+  },
+  "2026-12-18": {
+    "mode_1_word_kelime_1": "sandalye",
+    "mode_3_word_kelime_1": "şişe",
+    "mode_3_word_kelime_2": "diş",
+    "mode_3_word_kelime_3": "komşu"
+  },
+  "2026-12-19": {
+    "mode_1_word_kelime_1": "hayat",
+    "mode_3_word_kelime_1": "omuz",
+    "mode_3_word_kelime_2": "otobüs",
+    "mode_3_word_kelime_3": "kış"
+  },
+  "2026-12-20": {
+    "mode_1_word_kelime_1": "metro",
+    "mode_3_word_kelime_1": "mağaza",
+    "mode_3_word_kelime_2": "arkadaş",
+    "mode_3_word_kelime_3": "merak"
+  },
+  "2026-12-21": {
+    "mode_1_word_kelime_1": "akıl",
+    "mode_3_word_kelime_1": "park",
+    "mode_3_word_kelime_2": "bilim",
+    "mode_3_word_kelime_3": "soğan"
+  },
+  "2026-12-22": {
+    "mode_1_word_kelime_1": "kelebek",
+    "mode_3_word_kelime_1": "bardak",
+    "mode_3_word_kelime_2": "göl",
+    "mode_3_word_kelime_3": "bahar"
+  },
+  "2026-12-23": {
+    "mode_1_word_kelime_1": "arı",
+    "mode_3_word_kelime_1": "ceket",
+    "mode_3_word_kelime_2": "rüzgar",
+    "mode_3_word_kelime_3": "kilise"
+  },
+  "2026-12-24": {
+    "mode_1_word_kelime_1": "güven",
+    "mode_3_word_kelime_1": "makas",
+    "mode_3_word_kelime_2": "tramvay",
+    "mode_3_word_kelime_3": "akvaryum"
+  },
+  "2026-12-25": {
+    "mode_1_word_kelime_1": "oda",
+    "mode_3_word_kelime_1": "deri",
+    "mode_3_word_kelime_2": "insan",
+    "mode_3_word_kelime_3": "saray"
+  },
+  "2026-12-26": {
+    "mode_1_word_kelime_1": "aile",
+    "mode_3_word_kelime_1": "tırnak",
+    "mode_3_word_kelime_2": "şüphe",
+    "mode_3_word_kelime_3": "sarımsak"
+  },
+  "2026-12-27": {
+    "mode_1_word_kelime_1": "armut",
+    "mode_3_word_kelime_1": "beyin",
+    "mode_3_word_kelime_2": "tarak",
+    "mode_3_word_kelime_3": "kütüphane"
+  },
+  "2026-12-28": {
+    "mode_1_word_kelime_1": "kartal",
+    "mode_3_word_kelime_1": "reçel",
+    "mode_3_word_kelime_2": "kalp",
+    "mode_3_word_kelime_3": "zaman"
+  },
+  "2026-12-29": {
+    "mode_1_word_kelime_1": "kraliçe",
+    "mode_3_word_kelime_1": "gözlük",
+    "mode_3_word_kelime_2": "kemer",
+    "mode_3_word_kelime_3": "alev"
+  },
+  "2026-12-30": {
+    "mode_1_word_kelime_1": "kadın",
+    "mode_3_word_kelime_1": "bilgisayar",
+    "mode_3_word_kelime_2": "yazar",
+    "mode_3_word_kelime_3": "renk"
+  },
+  "2026-12-31": {
+    "mode_1_word_kelime_1": "iklim",
+    "mode_3_word_kelime_1": "kaplumbağa",
+    "mode_3_word_kelime_2": "masal",
+    "mode_3_word_kelime_3": "umut"
+  },
+  "2027-01-01": {
+    "mode_1_word_kelime_1": "bulut",
+    "mode_3_word_kelime_1": "lamba",
+    "mode_3_word_kelime_2": "koku",
+    "mode_3_word_kelime_3": "peynir"
+  },
+  "2027-01-02": {
+    "mode_1_word_kelime_1": "tavşan",
+    "mode_3_word_kelime_1": "bezelye",
+    "mode_3_word_kelime_2": "sanat",
+    "mode_3_word_kelime_3": "dalga"
+  },
+  "2027-01-03": {
+    "mode_1_word_kelime_1": "tereyağı",
+    "mode_3_word_kelime_1": "çiçek",
+    "mode_3_word_kelime_2": "yunus",
+    "mode_3_word_kelime_3": "parmak"
+  },
+  "2027-01-04": {
+    "mode_1_word_kelime_1": "mum",
+    "mode_3_word_kelime_1": "yengeç",
+    "mode_3_word_kelime_2": "dükkan",
+    "mode_3_word_kelime_3": "yağmur"
+  },
+  "2027-01-05": {
+    "mode_1_word_kelime_1": "çırak",
+    "mode_3_word_kelime_1": "örümcek",
+    "mode_3_word_kelime_2": "yastık",
+    "mode_3_word_kelime_3": "bilezik"
+  },
+  "2027-01-06": {
+    "mode_1_word_kelime_1": "kitap",
+    "mode_3_word_kelime_1": "asker",
+    "mode_3_word_kelime_2": "kayısı",
+    "mode_3_word_kelime_3": "geyik"
+  },
+  "2027-01-07": {
+    "mode_1_word_kelime_1": "köpekbalığı",
+    "mode_3_word_kelime_1": "zencefil",
+    "mode_3_word_kelime_2": "dil",
+    "mode_3_word_kelime_3": "pazar"
+  },
+  "2027-01-08": {
+    "mode_1_word_kelime_1": "kol",
+    "mode_3_word_kelime_1": "yaz",
+    "mode_3_word_kelime_2": "koyun",
+    "mode_3_word_kelime_3": "karın"
+  },
+  "2027-01-09": {
+    "mode_1_word_kelime_1": "tat",
+    "mode_3_word_kelime_1": "kan",
+    "mode_3_word_kelime_2": "el",
+    "mode_3_word_kelime_3": "at"
+  },
+  "2027-01-10": {
+    "mode_1_word_kelime_1": "kuş",
+    "mode_3_word_kelime_1": "ay",
+    "mode_3_word_kelime_2": "ayı",
+    "mode_3_word_kelime_3": "kale"
+  },
+  "2027-01-11": {
+    "mode_1_word_kelime_1": "ocak",
+    "mode_3_word_kelime_1": "kar",
+    "mode_3_word_kelime_2": "dolu",
+    "mode_3_word_kelime_3": "mısır"
+  },
+  "2027-01-12": {
+    "mode_1_word_kelime_1": "kaz",
+    "mode_3_word_kelime_1": "baş",
+    "mode_3_word_kelime_2": "yüz",
+    "mode_3_word_kelime_3": "güç"
+  }
 }

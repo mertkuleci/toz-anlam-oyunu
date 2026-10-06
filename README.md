@@ -38,6 +38,17 @@ SMTP_FROM_EMAIL = "seninadresin@gmail.com"
 
 Uygulama Sifresini koda veya sohbete yazma. Canli ortamda ayni TOML degerlerini Streamlit Cloud uygulamasinin **Settings > Secrets** alanina gir. `.streamlit/secrets.toml` Git disinda tutulur.
 
+## Gemini AI puanlama (istege bagli)
+
+Kelime tahminlerini Google Gemini'nin ucretsiz API katmaniyla anlam acisindan degerlendirmek icin AI Studio'dan bir API anahtari olustur ve Secrets'e ekle:
+
+```toml
+GEMINI_API_KEY = "Google AI Studio API anahtari"
+GEMINI_MODEL = "gemini-3.5-flash-lite"
+```
+
+Anahtar tanimliysa yeni oyunlar AI yakinlik puanini ve AI ipuclarini kullanir; anahtar yoksa FastText modu calismaya devam eder. Her tahminde gizli hedef ve tahmin Google'a gonderilir. Ucretsiz katmanda kota/rate limit vardir ve gonderilen icerik Google urunlerini gelistirmek icin kullanilabilir; guncel kosullari [Gemini API fiyatlandirma belgesinden](https://ai.google.dev/gemini-api/docs/pricing) kontrol et. Anahtari sohbete veya Git'e ekleme.
+
 ## Oyun hakki ve hesaplar
 
 Kayitli hesap gun basina iki moddan yalnizca birini oynayabilir. Bu hak SQLite'ta tutulur ve oturum degisse de korunur. Anonim oyuncunun hakki tarayici oturumu boyunca uygulanir; anonim skorlar saklanmaz. Eski SHA-256 parola kayitlari basarili giriste PBKDF2'ye yukseltilir.

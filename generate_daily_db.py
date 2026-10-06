@@ -2,6 +2,7 @@ import argparse
 import logging
 import os
 import json
+import numpy as np
 import sqlite3
 import unicodedata
 from datetime import datetime, timedelta, timezone
@@ -15,6 +16,7 @@ DB_PATH = DATA_DIR / "game_data.db"
 MODEL_PATH = DATA_DIR / "wiki.tr.vec"
 YEARLY_JSON_PATH = DATA_DIR / "year_game_data.json"
 CLEAN_ROOTS_PATH = DATA_DIR / "clean_roots.txt"
+TARGET_WORDS_PATH = DATA_DIR / "target_words.json"
 TR_TIMEZONE = timezone(timedelta(hours=3))
 MAX_HINT_VOCABULARY = 60000
 
@@ -22,44 +24,58 @@ def tr_lower(text):
     text = text.replace("İ", "i").replace("I", "ı")
     return unicodedata.normalize("NFC", text.strip().lower())
 
-
 def load_clean_words():
+    if not CLEAN_ROOTS_PATH.exists():
+        return set()
     with open(CLEAN_ROOTS_PATH, "r", encoding="utf-8") as file:
         return {tr_lower(line) for line in file if line.strip()}
 
-
 def filter_clean_roots(words):
-    analyzer = MorphAnalyzer()
-    accepted_morphemes = {
-        ("Noun", "A3sg"),
-        ("Adj",),
-        ("Adv",),
-        ("Verb", "Inf1", "Noun", "A3sg")
-    }
     analyzer_logger = logging.getLogger("zeyrek.rulebasedanalyzer")
     previous_log_level = analyzer_logger.level
     analyzer_logger.setLevel(logging.ERROR)
+    
+    clean_words = set()
     try:
-        clean_words = set()
+        analyzer = MorphAnalyzer()
         for word in words:
-            analyses = analyzer._parse(word)
-            if not analyses or any(
-                tr_lower(analysis.dict_item.lemma) != word
-                for analysis in analyses
-            ):
-                continue
-            for analysis in analyses:
-                if "ProperNoun" in str(analysis.dict_item.secondary_pos):
+            try:
+                results = analyzer.analyze(word)
+                if not results:
                     continue
-                morphemes = tuple(morpheme[0].id_ for morpheme in analysis.morphemes)
-                if morphemes in accepted_morphemes:
-                    clean_words.add(word)
-                    break
-        return clean_words
+                analyses = results[0] if isinstance(results, list) and len(results) > 0 and isinstance(results[0], list) else results
+                for analysis in analyses:
+                    dict_item = getattr(analysis, 'dict_item', None)
+                    if not dict_item:
+                        continue
+                    lemma = tr_lower(getattr(dict_item, 'lemma', ''))
+                    sec_pos = str(getattr(dict_item, 'secondary_pos', ''))
+                    if lemma == word and "ProperNoun" not in sec_pos:
+                        clean_words.add(word)
+                        break
+            except Exception:
+                continue
+    except Exception as e:
+        print(f"⚠️ Zeyrek analizi sırasında uyarı ({e}), doğrudan kök listesi kullanılıyor.")
     finally:
         analyzer_logger.setLevel(previous_log_level)
 
+    if len(clean_words) >= 1000:
+        return clean_words
+    
+    # Güvenlik ağı: Zeyrek kısıtlayıcı kalırsa kök listesini doğrudan kullan
+    print("ℹ️ Aday kök kümesi doğrudan ipucu havuzu olarak kullanılıyor.")
+    return set(words)
+
 def fetch_tdk_definition(word):
+    if TARGET_WORDS_PATH.exists():
+        try:
+            with open(TARGET_WORDS_PATH, "r", encoding="utf-8") as f:
+                defs = json.load(f)
+                if word in defs:
+                    return defs[word]
+        except Exception:
+            pass
     try:
         response = requests.get(
             "https://sozluk.gov.tr/gts",
@@ -69,14 +85,13 @@ def fetch_tdk_definition(word):
         )
         response.raise_for_status()
         entries = response.json()
-        if not isinstance(entries, list):
-            return ""
-        for entry in entries:
-            for meaning in entry.get("anlamlarListe", []):
-                definition = meaning.get("anlam", "").strip()
-                if definition:
-                    return definition
-    except (requests.RequestException, ValueError, TypeError):
+        if isinstance(entries, list):
+            for entry in entries:
+                for meaning in entry.get("anlamlarListe", []):
+                    definition = meaning.get("anlam", "").strip()
+                    if definition:
+                        return definition
+    except Exception:
         return ""
     return ""
 
@@ -137,7 +152,6 @@ def init_db(conn):
 def build_daily_database(target_date=None):
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
-    # 1. 365 Günlük JSON dosyasından bugünün kelimelerini al
     if not os.path.exists(YEARLY_JSON_PATH):
         raise FileNotFoundError(
             f"'{YEARLY_JSON_PATH}' bulunamadı. Önce generate_year_json.py çalıştırın."
@@ -157,13 +171,10 @@ def build_daily_database(target_date=None):
             raise ValueError(f"{today_str} havuzda yok. Desteklenen aralık: {first_date} - {last_date}")
 
     games_config = yearly_data[today_str]
-
     daily_targets = list(games_config.values())
-
     print(f"📅 Günün Tarihi: {today_str}")
     print(f"🎯 JSON'dan Seçilen Günün Kelimeleri: {daily_targets}")
 
-    # 2. Vektör Modelini Yükle
     print(f"🧠 Vektör modeli yükleniyor ({MODEL_PATH})...")
     try:
         model = KeyedVectors.load_word2vec_format(MODEL_PATH, binary=False)
@@ -182,9 +193,16 @@ def build_daily_database(target_date=None):
     if missing_targets:
         raise ValueError(f"Vektör modelinde bulunmayan hedef kelimeler: {missing_targets}")
 
-    # Tahmin havuzu için modeldeki kelimeler
-    all_candidates = [tr_lower(w) for w in model.index_to_key if tr_lower(w).isalpha()]
-    all_candidates = list(dict.fromkeys(all_candidates))
+    model_words = []
+    seen_words = set()
+    for raw_word in model.index_to_key:
+        word = tr_lower(raw_word)
+        if word.isalpha() and word not in seen_words:
+            model_words.append(word)
+            seen_words.add(word)
+        else:
+            model_words.append(None)
+    model.fill_norms()
 
     conn = sqlite3.connect(DB_PATH)
     init_db(conn)
@@ -200,17 +218,17 @@ def build_daily_database(target_date=None):
 
     for game_key, target in games_config.items():
         print(f"\n⚙️ '{game_key}' ({target}) için tüm model sıralanıyor...")
-
         tdk_def = fetch_tdk_definition(target)
 
-        all_words_sim = []
-        for word in all_candidates:
-            if word in model:
-                sim = float(model.similarity(target, word)) * 100.0
-                all_words_sim.append((word, sim))
-
-        # Benzerliğe göre sırala
-        all_words_sim.sort(key=lambda x: x[1], reverse=True)
+        target_index = model.key_to_index[target]
+        target_vector = model.vectors[target_index]
+        similarities = model.vectors.dot(target_vector) / (model.norms * model.norms[target_index])
+        sorted_indices = np.argsort(-similarities, kind="stable")
+        all_words_sim = [
+            (model_words[index], float(similarities[index]) * 100.0)
+            for index in sorted_indices
+            if model_words[index] is not None
+        ]
 
         clean_ranked_data = []
         for model_rank, (word, sim) in enumerate(all_words_sim, start=1):
