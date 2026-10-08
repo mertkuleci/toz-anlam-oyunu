@@ -579,7 +579,22 @@ st.markdown("""
 
     #MainMenu, footer, header, [data-testid="stHeader"] { display: none !important; }
 
-    * { font-family: 'DM Sans', sans-serif !important; }
+    /* İkon fontlarını bozmamak için joker '*' kuralı yerine spesifik seçiciler kullanıyoruz */
+    html, body, p, div, span, label, input, button, select, textarea, h1, h2, h3, h4, h5, h6 {
+        font-family: 'DM Sans', sans-serif;
+    }
+
+    /* 1. ŞİFRE GÖSTER/GİZLE İKONU "visibi.." DÜZELTMESİ */
+    [data-testid="stIcon"],
+    [data-baseweb="icon"],
+    button[aria-label*="password"],
+    button[aria-label*="Password"],
+    div[data-baseweb="input"] button {
+        font-family: inherit !important;
+    }
+    div[data-baseweb="input"] button * {
+        font-family: initial !important;
+    }
 
     .block-container {
         max-width: 1180px !important;
@@ -694,6 +709,7 @@ st.markdown("""
     [data-testid="stCaptionContainer"] { color: var(--muted); }
     [data-testid="stDivider"] { border-color: var(--line); }
 
+    /* 2. SEKMELER (GİRİŞ YAP / KAYIT OL) MOBİL MOBİL GÖRÜNÜRLÜK DÜZELTMESİ */
     [data-testid="stTabs"] [data-baseweb="tab-list"] {
         gap: 18px;
         border-bottom: 1px solid var(--line);
@@ -701,19 +717,34 @@ st.markdown("""
     [data-testid="stTabs"] [data-baseweb="tab"] {
         height: 42px;
         padding: 0 2px;
-        color: var(--muted);
+        color: var(--muted) !important;
         font-size: 0.9rem;
     }
-    [data-testid="stTabs"] [aria-selected="true"] {
+    [data-testid="stTabs"] [data-baseweb="tab"] p,
+    [data-testid="stTabs"] [data-baseweb="tab"] span,
+    [data-testid="stTabs"] [data-baseweb="tab"] div {
+        color: var(--muted) !important;
+    }
+    [data-testid="stTabs"] [aria-selected="true"],
+    [data-testid="stTabs"] [aria-selected="true"] p,
+    [data-testid="stTabs"] [aria-selected="true"] span,
+    [data-testid="stTabs"] [aria-selected="true"] div {
         color: var(--green) !important;
         border-bottom-color: var(--green) !important;
+    }
+
+    /* FORM & INPUT ETİKETLERİ DÜZELTMESİ */
+    [data-testid="stWidgetLabel"] p,
+    [data-testid="stWidgetLabel"] span {
+        color: var(--ink) !important;
+        font-weight: 500 !important;
     }
 
     div[data-testid="stForm"] {
         padding: 17px 18px 8px;
         border: 1px solid var(--line);
         border-radius: 10px;
-        background: rgba(255,255,255,.74);
+        background: rgba(255,255,255,.88) !important;
     }
     .stTextInput > div > div > input {
         min-height: 44px;
@@ -721,7 +752,6 @@ st.markdown("""
         border-radius: 7px !important;
         background: var(--surface) !important;
         color: var(--ink) !important;
-        font-family: 'DM Sans', sans-serif !important;
         font-size: 0.95rem !important;
         box-shadow: none !important;
     }
@@ -729,13 +759,23 @@ st.markdown("""
         border-color: var(--green) !important;
         box-shadow: 0 0 0 3px rgba(29,91,72,.12) !important;
     }
+
+    /* 3. ST.WARNING MOBİL KONTRAST DÜZELTMESİ */
+    [data-testid="stAlert"] {
+        background-color: #FFF8E7 !important;
+        border: 1px solid #E6C875 !important;
+        border-radius: 8px !important;
+    }
+    [data-testid="stAlert"] * {
+        color: #5C4308 !important;
+    }
+
     .stButton > button, [data-testid="stFormSubmitButton"] > button {
         min-height: 42px;
         border: 1px solid var(--line) !important;
         border-radius: 7px !important;
         background: var(--surface) !important;
         color: var(--ink) !important;
-        font-family: 'DM Sans', sans-serif !important;
         font-size: 0.9rem !important;
         font-weight: 600 !important;
         box-shadow: none !important;
