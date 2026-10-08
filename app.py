@@ -387,7 +387,6 @@ def get_leaderboard(mode):
                 board.append({
                     "Oyuncu": uname,
                     "Skor": s["score"],
-                    "Kelimeler": ", ".join([tr_title(w) for w in s.get("words", [])]),
                     "Tarih": s.get("date", "")
                 })
     board.sort(key=lambda x: x["Skor"], reverse=True)
