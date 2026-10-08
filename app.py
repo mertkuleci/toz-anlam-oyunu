@@ -825,7 +825,26 @@ st.markdown("""
         font-weight: 600;
     }
     .v-heat-sub { color: var(--muted); font-size: 0.8rem; font-weight: 500; }
-
+    
+    .rules-box {
+        margin-bottom: 20px;
+        padding: 16px 20px;
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--green);
+        border-radius: 8px;
+        background: rgba(255,255,255,.82);
+        font-size: 0.88rem;
+        line-height: 1.55;
+        color: var(--ink);
+    }
+    .rules-box ul { margin: 6px 0 0; padding-left: 20px; }
+    .rules-box li { margin-bottom: 4px; }
+    .rules-title {
+        color: var(--green);
+        font-size: 0.78rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
     .hint-box-light {
         min-height: 100px;
         padding: 14px;
@@ -1092,6 +1111,37 @@ elif st.session_state.page == "playing":
         if st.button("← Ana Menü", width="stretch"):
             st.session_state.page = "welcome"
             st.rerun()
+    # Oyun Kuralları
+    is_three_word_mode = st.session_state.game_mode == "3_word"
+    if is_three_word_mode:
+        scoring_rules = (
+            "<li>Her kelime ayrı puanlanır; <b>3 kelimenin puanları toplanır</b> ve toplam skorun olur.</li>"
+            "<li>Bir kelimeyi bilirsen: <b>10 + (kalan hak × 2)</b> puan alırsın. Bilemezsen o kelimeden <b>0</b> puan.</li>"
+            "<li>Her joker kullanımı o kelimenin puanından <b>5 puan</b> düşer (bilsen bile en az 5 puan kalır).</li>"
+        )
+    else:
+        scoring_rules = (
+            "<li>Kelimeyi bilirsen: <b>10 + (kalan hak × 2)</b> puan alırsın. Bilemezsen <b>0</b> puan.</li>"
+            "<li>Her joker kullanımı puanından <b>5 puan</b> düşer (bilsen bile en az 5 puan kalır).</li>"
+        )
+
+    st.markdown(f"""
+    <div class='rules-box'>
+        <div class='rules-title'>📖 Nasıl Oynanır?</div>
+        <ul>
+            <li>İstediğin Türkçe kelimeyi yaz. Her tahmin, gizli hedef kelimeye <b>anlamca ne kadar yakınsa</b> o kadar ısı kazandırır ve soldaki bar yükselir.</li>
+            <li>Her kelime için <b>{MAX_ATTEMPTS} tahmin hakkın</b> var.</li>
+            <li><b>İpuçları ısıyla açılır:</b>
+                <b>%30</b> → yakın kelime ipuçları ·
+                <b>%60</b> → harf sayısı ·
+                <b>%90</b> → TDK tanımı</li>
+            <li><b>Jokerler:</b> İlk harf, son harf ve en yakın 5. &amp; 10. kelime jokerleri var (her biri -5 puan). "Rastgele Öner" butonu ücretsizdir.</li>
+            <li><b>%100 ısıya ulaştığında</b> yalnızca <b>1 tahmin hakkın</b> kalır; o tahminde bilemezsen kelime biter.</li>
+        </ul>
+        <div class='rules-title' style='margin-top:10px;'>🏅 Puanlama</div>
+        <ul>{scoring_rules}</ul>
+    </div>
+    """, unsafe_allow_html=True)
 
     # Bölüm Adımları
     step_cols = st.columns(max_steps)
