@@ -86,37 +86,6 @@ def get_smtp_setting(key, default=""):
         return default
 
 
-def send_verification_email(email, code):
-    host = get_smtp_setting("SMTP_HOST")
-    username = get_smtp_setting("SMTP_USER")
-    password = get_smtp_setting("SMTP_PASSWORD")
-    sender = get_smtp_setting("SMTP_FROM_EMAIL", username)
-    port = int(get_smtp_setting("SMTP_PORT", "587"))
-    if not host or not sender:
-        raise RuntimeError("E-posta doğrulaması henüz yapılandırılmamış.")
-
-    message = EmailMessage()
-    message["Subject"] = "T.Ö.Z. doğrulama kodu"
-    message["From"] = sender
-    message["To"] = email
-    message.set_content(
-        f"T.Ö.Z. hesabını doğrulamak için kodun: {code}\n\n"
-        "Kod 10 dakika içinde geçerliliğini yitirir. Bu isteği sen başlatmadıysan bu e-postayı yok say."
-    )
-
-    if port == 465:
-        with smtplib.SMTP_SSL(host, port, timeout=20, context=ssl.create_default_context()) as server:
-            if username:
-                server.login(username, password)
-            server.send_message(message)
-    else:
-        with smtplib.SMTP(host, port, timeout=20) as server:
-            server.starttls(context=ssl.create_default_context())
-            if username:
-                server.login(username, password)
-            server.send_message(message)
-
-
 def email_is_valid(email):
     return bool(re.fullmatch(r"[^@\s]+@[^@\s]+\.[^@\s]+", email))
 
@@ -143,7 +112,7 @@ def save_verified_user(username, email, password_hash):
         "scores": []
     }
     save_users(users)
-    return True, "E-posta doğrulandı. Şimdi giriş yapabilirsin."
+    return True, "Kayıt tamamlandı. Şimdi giriş yapabilirsin."
 
 # --- SQLITE VERİTABANI ERİŞİMİ ---
 def get_db_connection():
@@ -1054,113 +1023,32 @@ if st.session_state.page == "welcome":
                         else:
                             st.error("Kullanıcı adı veya şifre hatalı.")
             with t_reg:
-                pending = st.session_state.get("pending_registration")
-                if pending:
-                    st.markdown("#### E-posta doğrulaması")
-                    st.caption(f"Doğrulama kodu {pending['email']} adresine gönderildi.")
-                    with st.form("form_verify_registration"):
-                        verification_code = st.text_input(
-                            "E-postandaki 6 haneli kod", max_chars=6, placeholder="000000"
-                        )
-                        verify_submitted = st.form_submit_button("Doğrula ve kaydol", width="stretch")
-                    if verify_submitted:
-                        if time.time() > pending["expires_at"]:
-                            st.session_state.pop("pending_registration", None)
-                            st.error("Kodun süresi doldu. Yeniden kayıt başlat.")
-                        elif not re.fullmatch(r"\d{6}", verification_code):
-                            st.error("Altı haneli doğrulama kodunu gir.")
-                        elif hmac.compare_digest(
-                            hashlib.sha256(verification_code.encode("utf-8")).hexdigest(),
-                            pending["code_hash"]
-                        ):
-                            ok, message = save_verified_user(
-                                pending["username"], pending["email"], pending["password_hash"]
-                            )
-                            st.session_state.pop("pending_registration", None)
-                            if ok:
-                                st.success(message)
-                            else:
-                                st.error(message)
-                        else:
-                            pending["attempts"] += 1
-                            if pending["attempts"] >= 5:
-                                st.session_state.pop("pending_registration", None)
-                                st.error("Çok fazla hatalı kod girildi. Yeniden kayıt başlat.")
-                            else:
-                                st.session_state.pending_registration = pending
-                                st.error("Doğrulama kodu hatalı.")
+                with st.form("form_reg"):
+                    email_input = st.text_input("E-posta", placeholder="ornek@eposta.com")
+                    username_input = st.text_input("Kullanıcı adı")
+                    password_input = st.text_input("Şifre", type="password")
+                    password_repeat = st.text_input("Şifre tekrar", type="password")
+                    register_submitted = st.form_submit_button("Kayıt Ol", width="stretch")
 
-                    if st.button("Kodu yeniden gönder", width="stretch"):
-                        if time.time() - pending["sent_at"] < 60:
-                            st.warning("Yeni kod istemeden önce bir dakika bekle.")
-                        else:
-                            new_code = f"{secrets.randbelow(1000000):06d}"
-                            try:
-                                send_verification_email(pending["email"], new_code)
-                                pending["code_hash"] = hashlib.sha256(new_code.encode("utf-8")).hexdigest()
-                                pending["sent_at"] = time.time()
-                                pending["expires_at"] = pending["sent_at"] + 600
-                                pending["attempts"] = 0
-                                st.session_state.pending_registration = pending
-                                st.success("Yeni doğrulama kodu gönderildi.")
-                            except smtplib.SMTPAuthenticationError:
-                                st.error("SMTP kimlik doğrulaması reddedildi. Kullanıcı adını ve uygulama parolasını kontrol et.")
-                            except (smtplib.SMTPConnectError, OSError):
-                                st.error("SMTP sunucusuna bağlanılamadı. Sunucu adresi ve portu kontrol et.")
-                            except RuntimeError as error:
-                                st.error(str(error))
-                            except Exception as error:
-                                st.error(f"E-posta gönderimi başarısız ({type(error).__name__}).")
-                else:
-                    with st.form("form_reg"):
-                        email_input = st.text_input("E-posta", placeholder="ornek@eposta.com")
-                        username_input = st.text_input("Kullanıcı adı")
-                        password_input = st.text_input("Şifre", type="password")
-                        password_repeat = st.text_input("Şifre tekrar", type="password")
-                        send_code = st.form_submit_button("Doğrulama kodu gönder", width="stretch")
-                    if send_code:
-                        normalized_email = email_input.strip().lower()
-                        normalized_username = username_input.strip()
-                        existing_users = load_users()
-                        email_exists = any(
-                            user.get("email", "").lower() == normalized_email
-                            for user in existing_users.values()
+                if register_submitted:
+                    normalized_email = email_input.strip().lower()
+                    normalized_username = username_input.strip()
+                    if not email_is_valid(normalized_email):
+                        st.error("Geçerli bir e-posta adresi gir.")
+                    elif not username_is_valid(normalized_username):
+                        st.error("Kullanıcı adı 3-24 karakter olmalı; harf, sayı, nokta, tire veya alt çizgi kullan.")
+                    elif not password_is_valid(password_input):
+                        st.error("Şifre 1-8 karakter olmalı ve yalnızca küçük harf içermeli.")
+                    elif password_input != password_repeat:
+                        st.error("Şifreler eşleşmiyor.")
+                    else:
+                        ok, message = save_verified_user(
+                            normalized_username, normalized_email, hash_password(password_input)
                         )
-                        if not email_is_valid(normalized_email):
-                            st.error("Geçerli bir e-posta adresi gir.")
-                        elif not username_is_valid(normalized_username):
-                            st.error("Kullanıcı adı 3-24 karakter olmalı; harf, sayı, nokta, tire veya alt çizgi kullan.")
-                        elif not password_is_valid(password_input):
-                            st.error("Şifre 1-8 karakter olmalı ve yalnızca küçük harf içermeli.")
-                        elif password_input != password_repeat:
-                            st.error("Şifreler eşleşmiyor.")
-                        elif normalized_username in existing_users:
-                            st.error("Bu kullanıcı adı zaten alınmış.")
-                        elif email_exists:
-                            st.error("Bu e-posta adresi zaten kullanılıyor.")
+                        if ok:
+                            st.success(message)
                         else:
-                            verification_code = f"{secrets.randbelow(1000000):06d}"
-                            try:
-                                send_verification_email(normalized_email, verification_code)
-                                sent_at = time.time()
-                                st.session_state.pending_registration = {
-                                    "email": normalized_email,
-                                    "username": normalized_username,
-                                    "password_hash": hash_password(password_input),
-                                    "code_hash": hashlib.sha256(verification_code.encode("utf-8")).hexdigest(),
-                                    "sent_at": sent_at,
-                                    "expires_at": sent_at + 600,
-                                    "attempts": 0
-                                }
-                                st.rerun()
-                            except smtplib.SMTPAuthenticationError:
-                                st.error("SMTP kimlik doğrulaması reddedildi. Kullanıcı adını ve uygulama parolasını kontrol et.")
-                            except (smtplib.SMTPConnectError, OSError):
-                                st.error("SMTP sunucusuna bağlanılamadı. Sunucu adresi ve portu kontrol et.")
-                            except RuntimeError as error:
-                                st.error(str(error))
-                            except Exception as error:
-                                st.error(f"E-posta gönderimi başarısız ({type(error).__name__}).")
+                            st.error(message)
     with col_right:
         st.markdown("<div class='section-title'>🏆 Liderlik Tablosu</div>", unsafe_allow_html=True)
         tab_l1, tab_l2 = st.tabs(["Tek Kelime", "Üç Kelime"])
