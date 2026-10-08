@@ -711,26 +711,28 @@ st.markdown("""
 
     /* 2. SEKMELER (GİRİŞ YAP / KAYIT OL) MOBİL MOBİL GÖRÜNÜRLÜK DÜZELTMESİ */
     [data-testid="stTabs"] [data-baseweb="tab-list"] {
-        gap: 18px;
-        border-bottom: 1px solid var(--line);
+        gap: 18px !important;
+        border-bottom: 1px solid var(--line) !important;
     }
-    [data-testid="stTabs"] [data-baseweb="tab"] {
-        height: 42px;
-        padding: 0 2px;
-        color: var(--muted) !important;
-        font-size: 0.9rem;
+
+    /* 1. SEÇİLİ OLMAYAN (PASİF) SEKME YAZILARI VE İÇ ELEMANLARI */
+    [data-testid="stTabs"] [data-baseweb="tab"][aria-selected="false"],
+    [data-testid="stTabs"] [data-baseweb="tab"][aria-selected="false"] * {
+        color: #6B7771 !important; /* Koyu gri/muted renk */
+        opacity: 0.85 !important;
     }
-    [data-testid="stTabs"] [data-baseweb="tab"] p,
-    [data-testid="stTabs"] [data-baseweb="tab"] span,
-    [data-testid="stTabs"] [data-baseweb="tab"] div {
-        color: var(--muted) !important;
+
+    /* 2. SEÇİLİ (AKTİF) SEKME YAZILARI VE İÇ ELEMANLARI */
+    [data-testid="stTabs"] [data-baseweb="tab"][aria-selected="true"],
+    [data-testid="stTabs"] [data-baseweb="tab"][aria-selected="true"] * {
+        color: #1D5B48 !important; /* Ana yeşil renk */
+        font-weight: 700 !important;
+        opacity: 1 !important;
     }
-    [data-testid="stTabs"] [aria-selected="true"],
-    [data-testid="stTabs"] [aria-selected="true"] p,
-    [data-testid="stTabs"] [aria-selected="true"] span,
-    [data-testid="stTabs"] [aria-selected="true"] div {
-        color: var(--green) !important;
-        border-bottom-color: var(--green) !important;
+
+    /* Sekme alt çizgisi */
+    [data-testid="stTabs"] [data-baseweb="tab-highlight"] {
+        background-color: #1D5B48 !important;
     }
 
     /* FORM & INPUT ETİKETLERİ DÜZELTMESİ */
